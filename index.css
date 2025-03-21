@@ -6,7 +6,7 @@
 body {
     font-family: 'Jost', sans-serif;
     background: #f8f9fa;
-    color: #000000;
+    color: #333;
     margin: 0;
   }
   
@@ -23,7 +23,7 @@ body {
     text-align: center;
   }
   
-  /* ----- Leaders Section (One at a Time) ----- */
+  /* ----- Leaders Section (Smooth Fade Transition) ----- */
   .leader-container {
     position: relative;
     width: 100%;
@@ -32,14 +32,15 @@ body {
   }
 
   .leader-box {
-    display: none;
     position: absolute;
     width: 100%;
     text-align: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
   }
 
   .leader-box.active {
-    display: block;
+    opacity: 1;
   }
 
   .leader-image {
@@ -99,3 +100,4 @@ body {
     background: #003366;
     color: white;
   }
+  

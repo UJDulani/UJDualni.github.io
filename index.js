@@ -1,3 +1,7 @@
+ 
+/* --------------------------------------- */
+/* ----- index.js ----- */
+/* --------------------------------------- */
 
 document.addEventListener("DOMContentLoaded", function() {
   console.log("Dulani Website Loaded");
