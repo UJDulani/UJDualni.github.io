@@ -11,7 +11,7 @@ body {
   }
   
   header {
-    background: #11151a;
+    background: #003366;
     color: white;
     text-align: center;
     padding: 2rem;
@@ -23,23 +23,25 @@ body {
     text-align: center;
   }
   
-  /* ----- Leaders Section (Horizontal Scroll) ----- */
-  .leaders-carousel {
-    display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    white-space: nowrap;
-    padding: 1rem;
+  /* ----- Leaders Section (One at a Time) ----- */
+  .leader-container {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
   }
 
   .leader-box {
-    display: inline-block;
-    margin: 1rem;
+    display: none;
+    position: absolute;
+    width: 100%;
     text-align: center;
-    flex: 0 0 auto;
-    width: 200px;
   }
-  
+
+  .leader-box.active {
+    display: block;
+  }
+
   .leader-image {
     width: 150px;
     height: 150px;
@@ -96,18 +98,3 @@ body {
     padding: 1rem;
     background: #003366;
     color: white;
-  }
-  
-  /* Scrollbar Styling */
-  .leaders-carousel::-webkit-scrollbar {
-    height: 8px;
-  }
-
-  .leaders-carousel::-webkit-scrollbar-thumb {
-    background: #0055aa;
-    border-radius: 10px;
-  }
-  
-  .leaders-carousel::-webkit-scrollbar-track {
-    background: #ddd;
-  }

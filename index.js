@@ -1,9 +1,18 @@
-/* --------------------------------------- */
-/* ----- index.js ----- */
-/* --------------------------------------- */
 
 document.addEventListener("DOMContentLoaded", function() {
   console.log("Dulani Website Loaded");
+
+  const leaders = document.querySelectorAll(".leader-box");
+  let leaderIndex = 0;
+  
+  function showNextLeader() {
+    leaders.forEach(leader => leader.classList.remove("active"));
+    leaders[leaderIndex].classList.add("active");
+    leaderIndex = (leaderIndex + 1) % leaders.length;
+  }
+  
+  showNextLeader();
+  setInterval(showNextLeader, 4000);
 
   const mentorsData = {
     cs: [
@@ -35,4 +44,3 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 });
-
