@@ -1,6 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", function() {
-  console.log("ملف المرشدين - دلني.pdf");
+  console.log("Meet Our Mentors");
 
   // Smooth Scroll for Navigation Links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
