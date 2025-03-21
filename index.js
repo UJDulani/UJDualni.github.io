@@ -1,6 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", function() {
-  console.log("Dulani Website Loaded");
+  console.log("ملف المرشدين - دلني.pdf");
 
   // Smooth Scroll for Navigation Links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
