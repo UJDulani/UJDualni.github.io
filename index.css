@@ -18,15 +18,15 @@ header {
 
 .header__content {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: left;
+  justify-content: left;
   max-width: 100px;
   margin: 0 auto;
 }
 
 .header-logo {
   width: 120px;
-  height: auto;
+  height: 120px;
   margin-left: 2rem; /* For RTL layout */
 }
 
