@@ -8,7 +8,7 @@ body {
   margin: 0;
   direction: rtl;
 }
-/* Alternative approach for logo+text side by side */
+
 header {
   background: linear-gradient(135deg, #003366, #004080);
   color: white;
@@ -20,7 +20,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 1000px;
+  max-width: 100px;
   margin: 0 auto;
 }
 
