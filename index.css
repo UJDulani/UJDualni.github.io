@@ -8,7 +8,6 @@ body {
   margin: 0;
   direction: rtl;
 }
-
 header {
   background: linear-gradient(135deg, #003366, #004080);
   color: white;
@@ -45,12 +44,12 @@ header {
   .header__container {
     flex-direction: column;
   }
-
+  
   .header-logo {
     margin: 0 0 1rem 0;
     width: 60px;
   }
-
+  
   .header__text-box {
     text-align: center;
   }
@@ -82,96 +81,6 @@ h2::after {
   background-color: #003366;
 }
 
-/* ----- Modernized About & Vision Sections ----- */
-#about, #vision {
-  background: white;
-  padding: 4rem 2rem;
-  text-align: center;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-#about p, #vision p {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  color: #444;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-#vision {
-  background: url('vision-bg.jpg') center/cover;
-  padding: 5rem 2rem;
-  text-align: center;
-  position: relative;
-}
-
-.vision-overlay {
-  background: rgba(0, 51, 102, 0.7);
-  padding: 3rem;
-  border-radius: 10px;
-  display: inline-block;
-  color: white;
-}
-
-/* ----- Goals Section (Card Layout) ----- */
-.goals-container {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.goal-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  transition: 0.3s ease;
-  width: 300px;
-}
-
-.goal-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-}
-
-.goal-icon {
-  font-size: 2rem;
-  display: block;
-  margin-bottom: 1rem;
-}
-
-/* ----- Target Audience Section (Interactive Cards) ----- */
-.audience-container {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.audience-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  transition: transform 0.3s ease;
-  width: 280px;
-}
-
-.audience-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-}
-
-.audience-icon {
-  font-size: 2.5rem;
-  display: block;
-  margin-bottom: 1rem;
-}
-
 /* ----- Leaders Section ----- */
 .leaders-container {
   display: flex;
@@ -179,6 +88,49 @@ h2::after {
   justify-content: center;
   gap: 2rem;
   margin: 2rem 0;
+}
+
+.leader-box {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  transition: transform 0.3s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.leader-box:hover {
+  transform: translateY(-5px);
+}
+
+.leader-box p {
+  font-weight: 500;
+  margin: 0.5rem 0 0;
+  color: #003366;
+}
+
+.leader-image-container {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  border: 3px solid #003366;
+}
+
+.leader-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.leader-box .leader-title {
+  font-size: 0.9rem;
+  color: #0077cc;
 }
 
 /* ----- Achievements Section ----- */
@@ -202,21 +154,165 @@ h2::after {
   text-align: center;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .section-container {
-    flex-direction: column;
-    text-align: center;
-  }
+#achievements strong {
+  display: block;
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
 
-  .section-content {
-    flex-direction: column;
-  }
+/* ----- Mentors Section ----- */
+.branches {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
 
-  .goals-container, .audience-container {
-    flex-direction: column;
-    align-items: center;
-  }
+.branch-btn {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  background: #003366;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  font-family: 'Tajawal', Arial, sans-serif;
+}
+
+.branch-btn:hover {
+  background: #0055aa;
+  transform: translateY(-2px);
+}
+
+.branch-btn.active-branch {
+  background: #0077cc;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.mentor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.mentor-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.mentor-card:hover {
+  transform: translateY(-5px);
+}
+
+.mentor-image-container {
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+}
+
+.mentor-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mentor-name {
+  color: #003366;
+  margin: 1rem 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+.mentor-speciality {
+  color: #0077cc;
+  font-weight: 500;
+  margin: 0 0 1rem;
+}
+
+.mentor-about {
+  padding: 0 1.5rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  height: 80px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  color: #333333;
+}
+
+.mentor-contact {
+  padding: 0 1.5rem 1.5rem;
+  color: #333333;
+}
+
+.contact-btn {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background-color: #003366;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+  background-color: #0055aa;
+}
+
+/* ----- Services Section ----- */
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #003366;
+}
+
+.service-card h3 {
+  color: #003366;
+  margin-bottom: 1rem;
+}
+
+.service-card p {
+  color: #333333;
 }
 
 /* ----- Footer ----- */
@@ -270,4 +366,58 @@ footer {
   text-align: center;
   padding-top: 1rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* About section text color */
+#about p {
+  color: #333333;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Center text in main sections */
+section p {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 800px;
+  color: #333333;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .branches {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .branch-btn {
+    width: 80%;
+  }
+  
+  .mentor-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .services-container {
+    grid-template-columns: 1fr;
+  }
+  
+  #achievements ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #achievements li {
+    width: 80%;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
 }
