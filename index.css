@@ -1,73 +1,78 @@
-/* Styles for Dulani Website */
-@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap');
+/* Dulani Website - Nautical Theme Redesign */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-blue: #0A4A6E;
+  --secondary-blue: #1C6CA0;
+  --light-blue: #B0D4F0;
+  --background-white: #F4F7FA;
+  --text-dark: #2C3E50;
+  --accent-blue: #3498DB;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-  font-family: 'Tajawal', Arial, sans-serif;
-  background: #f5f5f5;
-  color: #333333;
-  margin: 0;
+  font-family: 'Inter', Arial, sans-serif;
+  background-color: var(--background-white);
+  color: var(--text-dark);
+  line-height: 1.6;
   direction: rtl;
 }
 
+/* Header Redesign */
 header {
-  background: linear-gradient(135deg, #003366, #004080);
+  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
   color: white;
-  padding: 2rem 1rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 3rem 1rem;
   position: relative;
+  overflow: hidden;
 }
 
 .header__container {
-  display: flex;
-  align-items: center;
   max-width: 1200px;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
 }
 
 .header-logo {
-  width: 80px;
+  width: 100px;
   height: auto;
-  margin-left: 2rem;
+  transition: transform 0.3s ease;
 }
 
-.header__text-box {
-  flex: 1;
-  text-align: center;
+.header-logo:hover {
+  transform: scale(1.05);
 }
 
 .heading-primary {
-  font-size: 2.5rem;
+  font-size: 2.75rem;
+  font-weight: 700;
   margin-bottom: 1rem;
+  color: white;
 }
 
-/* Responsive adjustments for the header */
-@media (max-width: 768px) {
-  .header__container {
-    flex-direction: column;
-  }
-
-  .header-logo {
-    margin: 0 0 1rem 0;
-    width: 60px;
-  }
-
-  .header__text-box {
-    text-align: center;
-  }
-}
-
+/* Section Styling */
 section {
-  padding: 4rem 2rem;
-  border-bottom: 1px solid #eaeaea;
-  text-align: center;
-  max-width: 1200px;
+  padding: 5rem 2rem;
+  max-width: 1400px;
   margin: 0 auto;
+  position: relative;
 }
 
 h2 {
-  color: #003366;
-  font-size: 2rem;
-  margin-bottom: 2rem;
+  color: var(--primary-blue);
+  font-size: 2.25rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
   position: relative;
 }
 
@@ -77,378 +82,226 @@ h2::after {
   bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
-  width: 60px;
+  width: 80px;
   height: 3px;
-  background-color: #003366;
+  background-color: var(--accent-blue);
 }
 
-/* ----- Modernized About & Vision Sections ----- */
+/* About & Vision Sections */
 #about, #vision {
   background: white;
-  padding: 4rem 2rem;
-  text-align: center;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 3rem;
 }
 
 #about p, #vision p {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  color: #444;
+  font-size: 1.1rem;
+  color: var(--text-dark);
   max-width: 800px;
   margin: 0 auto;
 }
 
 #vision {
-  background: url('vision-bg.jpg') center/cover;
-  padding: 5rem 2rem;
-  text-align: center;
-  position: relative;
-}
-
-.vision-overlay {
-  background: rgba(0, 51, 102, 0.7);
-  padding: 3rem;
-  border-radius: 10px;
-  display: inline-block;
+  background: linear-gradient(135deg, var(--light-blue), var(--secondary-blue));
   color: white;
+  padding: 4rem;
 }
 
-/* ----- Goals Section (Card Layout) ----- */
+/* Goals Section */
 .goals-container {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 2.5rem;
   flex-wrap: wrap;
 }
 
 .goal-card {
   background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   text-align: center;
-  transition: 0.3s ease;
-  width: 300px;
+  width: 350px;
+  transition: all 0.4s ease;
+  border-top: 4px solid var(--accent-blue);
 }
 
 .goal-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
 .goal-icon {
-  font-size: 2rem;
   display: block;
-  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  color: var(--primary-blue);
+  margin-bottom: 1.5rem;
 }
 
-/* ----- Mentors Section ----- */
-.branches {
+/* Target Audience */
+.audience-container {
   display: flex;
+  justify-content: center;
+  gap: 2.5rem;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
 }
 
-.branch-btn {
-  padding: 0.8rem 1.5rem;
-  border: none;
-  background: #003366;
-  color: white;
-  cursor: pointer;
-  font-size: 1rem;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-  font-family: 'Tajawal', Arial, sans-serif;
+.audience-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 350px;
+  transition: all 0.4s ease;
+  border-top: 4px solid var(--secondary-blue);
 }
 
-.branch-btn:hover {
-  background: #0055aa;
-  transform: translateY(-2px);
+.audience-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
-.branch-btn.active-branch {
-  background: #0077cc;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.audience-icon {
+  display: block;
+  font-size: 2.5rem;
+  color: var(--secondary-blue);
+  margin-bottom: 1.5rem;
 }
 
-.mentor-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.mentor-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: white;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+/* Achievements */
+#achievements {
+  background-color: var(--light-blue);
   text-align: center;
 }
 
-.mentor-card:hover {
-  transform: translateY(-5px);
-}
-
-.mentor-image-container {
-  width: 100%;
-  height: 160px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f0f0f0;
-}
-
-.mentor-image {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.mentor-name {
-  color: #003366;
-  margin: 1rem 0 0.5rem;
-  font-size: 1.2rem;
-}
-
-.mentor-speciality {
-  color: #0077cc;
-  font-weight: 500;
-  margin: 0 0 1rem;
-}
-
-.mentor-about {
-  padding: 0 1.5rem;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  height: 80px;
-  overflow: hidden;
-  margin-bottom: 1rem;
-  color: #333333;
-}
-
-.mentor-contact {
-  padding: 0 1.5rem 1.5rem;
-  color: #333333;
-}
-
-.contact-btn {
-  display: inline-block;
-  padding: 0.5rem 1.5rem;
-  background-color: #003366;
-  color: white;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-.contact-btn:hover {
-  background-color: #0055aa;
-}
-
-/* ----- Leaders Section ----- */
-.leaders-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin: 2rem 0;
-}
-
-.leader-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: white;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  text-align: center;
-  width: 300px;
-  padding-bottom: 1rem;
-}
-
-.leader-card:hover {
-  transform: translateY(-5px);
-}
-
-.leader-image-container {
-  width: 100%;
-  height: 250px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f0f0f0;
-}
-
-.leader-image {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.leader-details {
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.leader-name {
-  color: #003366;
-  margin: 0.5rem 0;
-  font-size: 1.4rem;
-}
-
-.leader-title {
-  color: #0077cc;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-}
-
-.leader-about {
-  color: #333333;
-  text-align: center;
-  margin-bottom: 1rem;
-  padding: 0 1rem;
-  line-height: 1.6;
-  height: 100px;
-  overflow: hidden;
-}
-
-/* ----- Achievements Section ----- */
 #achievements ul {
-  list-style: none;
-  padding: 0;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
+  list-style: none;
 }
 
 #achievements li {
-  background-color: #003366;
+  background-color: white;
   padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-  width: 200px;
-  font-size: 1.2rem;
-  color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  min-width: 250px;
+  color: var(--primary-blue);
+}
+
+/* Services */
+.services-container {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.service-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 350px;
+  transition: all 0.4s ease;
+  border-top: 4px solid var(--secondary-blue);
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon {
+  display: block;
+  font-size: 2.5rem;
+  color: var(--primary-blue);
+  margin-bottom: 1.5rem;
+}
+
+/* Contact Section */
+#contact {
+  background-color: var(--background-white);
   text-align: center;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .section-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .section-content {
-    flex-direction: column;
-  }
-
-  .goals-container, .audience-container, .mentor-grid {
-    flex-direction: column;
-    align-items: center;
-  }
+.contact-info {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
 }
 
-/* ----- Footer ----- */
+/* Footer */
 footer {
-  background: linear-gradient(135deg, #002244, #003366);
+  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
   color: white;
-  padding: 3rem 2rem 1rem;
+  padding: 4rem 2rem;
 }
 
 .footer-content {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-}
-
-.footer-section {
-  flex: 1;
-  min-width: 200px;
-  margin-bottom: 2rem;
+  flex-wrap: wrap;
 }
 
 .footer-section a {
-  color: #ccc;
+  color: white;
   text-decoration: none;
+  display: block;
+  margin-bottom: 0.5rem;
   transition: color 0.3s ease;
 }
 
 .footer-section a:hover {
-  color: white;
+  color: var(--light-blue);
 }
 
 .footer-bottom {
   text-align: center;
+  margin-top: 2rem;
   padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.2);
 }
 
-/* Scroll Animation */
-#about, #vision, #goals, #target-audience {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header__container {
+    flex-direction: column;
+    text-align: center;
+  }
 
-.section-animate {
-  opacity: 1;
-  transform: translateY(0);
-}
+  #about, #vision {
+    flex-direction: column;
+    text-align: center;
+  }
 
-/* Goal Card Hover Effect */
-.goal-card {
-  transition: all 0.3s ease;
-  transform-origin: center;
-}
+  .goals-container, 
+  .audience-container, 
+  .services-container,
+  .mentor-grid {
+    flex-direction: column;
+    align-items: center;
+  }
 
-.goal-card-hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-  background-color: #f9f9f9;
-}
+  #achievements ul {
+    flex-direction: column;
+    align-items: center;
+  }
 
-.goal-card-hover .goal-icon {
-  transform: rotate(15deg);
-  color: #0077cc;
-}
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
 
-/* Audience Card Hover Effect */
-.audience-card {
-  transition: all 0.3s ease;
-  transform-origin: center;
-}
-
-.audience-card-hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-  background-color: #f9f9f9;
-}
-
-.audience-card-hover .audience-icon {
-  transform: translateY(-10px);
-  color: #0077cc;
+  .footer-section {
+    margin-bottom: 1.5rem;
+  }
 }
