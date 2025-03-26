@@ -130,3 +130,47 @@ document.addEventListener("DOMContentLoaded", function() {
     document.querySelector(".branch-btn").click();
   }
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Interactive card hover effects
+  function setupInteractiveCards() {
+    const cardSections = [
+      { selector: '.goal-card', hoverClass: 'goal-card-hover' },
+      { selector: '.audience-card', hoverClass: 'audience-card-hover' }
+    ];
+
+    cardSections.forEach(section => {
+      const cards = document.querySelectorAll(section.selector);
+      
+      cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+          card.classList.add(section.hoverClass);
+        });
+        
+        card.addEventListener('mouseleave', () => {
+          card.classList.remove(section.hoverClass);
+        });
+      });
+    });
+  }
+
+  // Scroll-triggered animations
+  function setupScrollAnimations() {
+    const sections = document.querySelectorAll('#about, #vision, #goals, #target-audience');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('section-animate');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  }
+
+  setupInteractiveCards();
+  setupScrollAnimations();
+});
