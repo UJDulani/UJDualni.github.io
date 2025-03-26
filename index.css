@@ -1,78 +1,73 @@
-/* Dulani Website - Nautical Theme Redesign */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
-:root {
-  --primary-blue: #0A4A6E;
-  --secondary-blue: #1C6CA0;
-  --light-blue: #B0D4F0;
-  --background-white: #F4F7FA;
-  --text-dark: #2C3E50;
-  --accent-blue: #3498DB;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* Styles for Dulani Website */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap');
 
 body {
-  font-family: 'Inter', Arial, sans-serif;
-  background-color: var(--background-white);
-  color: var(--text-dark);
-  line-height: 1.6;
+  font-family: 'Tajawal', Arial, sans-serif;
+  background: #f5f5f5;
+  color: #333333;
+  margin: 0;
   direction: rtl;
 }
 
-/* Header Redesign */
 header {
-  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+  background: linear-gradient(135deg, #003366, #004080);
   color: white;
-  padding: 3rem 1rem;
+  padding: 2rem 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   position: relative;
-  overflow: hidden;
 }
 
 .header__container {
-  max-width: 1200px;
-  margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  position: relative;
-  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .header-logo {
-  width: 100px;
+  width: 80px;
   height: auto;
-  transition: transform 0.3s ease;
+  margin-left: 2rem;
 }
 
-.header-logo:hover {
-  transform: scale(1.05);
+.header__text-box {
+  flex: 1;
+  text-align: center;
 }
 
 .heading-primary {
-  font-size: 2.75rem;
-  font-weight: 700;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: white;
 }
 
-/* Section Styling */
+/* Responsive adjustments for the header */
+@media (max-width: 768px) {
+  .header__container {
+    flex-direction: column;
+  }
+
+  .header-logo {
+    margin: 0 0 1rem 0;
+    width: 60px;
+  }
+
+  .header__text-box {
+    text-align: center;
+  }
+}
+
 section {
-  padding: 5rem 2rem;
-  max-width: 1400px;
+  padding: 4rem 2rem;
+  border-bottom: 1px solid #eaeaea;
+  text-align: center;
+  max-width: 1200px;
   margin: 0 auto;
-  position: relative;
 }
 
 h2 {
-  color: var(--primary-blue);
-  font-size: 2.25rem;
-  margin-bottom: 2.5rem;
-  text-align: center;
+  color: #003366;
+  font-size: 2rem;
+  margin-bottom: 2rem;
   position: relative;
 }
 
@@ -82,223 +77,70 @@ h2::after {
   bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
-  width: 80px;
+  width: 60px;
   height: 3px;
-  background-color: var(--accent-blue);
+  background-color: #003366;
 }
 
-/* About & Vision Sections */
+/* ----- Modernized About & Vision Sections ----- */
 #about, #vision {
   background: white;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  display: flex;
-  align-items: center;
-  gap: 3rem;
+  padding: 4rem 2rem;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 #about p, #vision p {
-  font-size: 1.1rem;
-  color: var(--text-dark);
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #444;
   max-width: 800px;
   margin: 0 auto;
 }
 
 #vision {
-  background: linear-gradient(135deg, var(--light-blue), var(--secondary-blue));
-  color: white;
-  padding: 4rem;
+  background: url('vision-bg.jpg') center/cover;
+  padding: 5rem 2rem;
+  text-align: center;
+  position: relative;
 }
 
-/* Goals Section */
+.vision-overlay {
+  background: rgba(0, 51, 102, 0.7);
+  padding: 3rem;
+  border-radius: 10px;
+  display: inline-block;
+  color: white;
+}
+
+/* ----- Goals Section (Card Layout) ----- */
 .goals-container {
   display: flex;
   justify-content: center;
-  gap: 2.5rem;
+  gap: 2rem;
   flex-wrap: wrap;
 }
 
 .goal-card {
   background: white;
-  padding: 2.5rem;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 350px;
-  transition: all 0.4s ease;
-  border-top: 4px solid var(--accent-blue);
+  transition: 0.3s ease;
+  width: 300px;
 }
 
 .goal-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 .goal-icon {
+  font-size: 2rem;
   display: block;
-  font-size: 2.5rem;
-  color: var(--primary-blue);
-  margin-bottom: 1.5rem;
-}
-
-/* Target Audience */
-.audience-container {
-  display: flex;
-  justify-content: center;
-  gap: 2.5rem;
-  flex-wrap: wrap;
-}
-
-.audience-card {
-  background: white;
-  padding: 2.5rem;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  width: 350px;
-  transition: all 0.4s ease;
-  border-top: 4px solid var(--secondary-blue);
-}
-
-.audience-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-}
-
-.audience-icon {
-  display: block;
-  font-size: 2.5rem;
-  color: var(--secondary-blue);
-  margin-bottom: 1.5rem;
-}
-
-/* ----- Leaders Section ----- */
-.leaders-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin: 2rem 0;
-}
-
-.leader-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: white;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  text-align: center;
-  width: 300px;
-  padding-bottom: 1rem;
-}
-
-.leader-card:hover {
-  transform: translateY(-5px);
-}
-
-.leader-image-container {
-  width: 100%;
-  height: 250px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f0f0f0;
-}
-
-.leader-image {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.leader-details {
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.leader-name {
-  color: #003366;
-  margin: 0.5rem 0;
-  font-size: 1.4rem;
-}
-
-.leader-title {
-  color: #0077cc;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-}
-
-.leader-about {
-  color: #333333;
-  text-align: center;
   margin-bottom: 1rem;
-  padding: 0 1rem;
-  line-height: 1.6;
-  height: 100px;
-  overflow: hidden;
-}
-
-
-/* Achievements */
-#achievements {
-  background-color: var(--light-blue);
-  text-align: center;
-}
-
-#achievements ul {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  list-style: none;
-}
-
-#achievements li {
-  background-color: white;
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  min-width: 250px;
-  color: var(--primary-blue);
-}
-
-/* Services */
-.services-container {
-  display: flex;
-  justify-content: center;
-  gap: 2.5rem;
-  flex-wrap: wrap;
-}
-
-.service-card {
-  background: white;
-  padding: 2.5rem;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  width: 350px;
-  transition: all 0.4s ease;
-  border-top: 4px solid var(--secondary-blue);
-}
-
-.service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-}
-
-.service-icon {
-  display: block;
-  font-size: 2.5rem;
-  color: var(--primary-blue);
-  margin-bottom: 1.5rem;
 }
 
 /* ----- Mentors Section ----- */
@@ -416,84 +258,197 @@ h2::after {
   background-color: #0055aa;
 }
 
-
-/* Contact Section */
-#contact {
-  background-color: var(--background-white);
-  text-align: center;
+/* ----- Leaders Section ----- */
+.leaders-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
 }
 
-.contact-info {
-  margin-top: 2rem;
+.leader-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  text-align: center;
+  width: 300px;
+  padding-bottom: 1rem;
+}
+
+.leader-card:hover {
+  transform: translateY(-5px);
+}
+
+.leader-image-container {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
   display: flex;
   justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
 }
 
-/* Footer */
-footer {
-  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
-  color: white;
-  padding: 4rem 2rem;
+.leader-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.footer-content {
+.leader-details {
+  padding: 1rem;
   display: flex;
-  justify-content: space-between;
-  max-width: 1400px;
-  margin: 0 auto;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
 }
 
-.footer-section a {
-  color: white;
-  text-decoration: none;
-  display: block;
+.leader-name {
+  color: #003366;
+  margin: 0.5rem 0;
+  font-size: 1.4rem;
+}
+
+.leader-title {
+  color: #0077cc;
+  font-weight: 500;
   margin-bottom: 0.5rem;
-  transition: color 0.3s ease;
 }
 
-.footer-section a:hover {
-  color: var(--light-blue);
-}
-
-.footer-bottom {
+.leader-about {
+  color: #333333;
   text-align: center;
-  margin-top: 2rem;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(255,255,255,0.2);
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+  line-height: 1.6;
+  height: 100px;
+  overflow: hidden;
+}
+
+/* ----- Achievements Section ----- */
+#achievements ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+#achievements li {
+  background-color: #003366;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  font-size: 1.2rem;
+  color: #ffffff;
+  text-align: center;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .header__container {
+  .section-container {
     flex-direction: column;
     text-align: center;
   }
 
-  #about, #vision {
+  .section-content {
     flex-direction: column;
-    text-align: center;
   }
 
-  .goals-container, 
-  .audience-container, 
-  .services-container,
-  .mentor-grid {
+  .goals-container, .audience-container, .mentor-grid {
     flex-direction: column;
     align-items: center;
   }
+}
 
-  #achievements ul {
-    flex-direction: column;
-    align-items: center;
-  }
+/* ----- Footer ----- */
+footer {
+  background: linear-gradient(135deg, #002244, #003366);
+  color: white;
+  padding: 3rem 2rem 1rem;
+}
 
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
-  }
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-  .footer-section {
-    margin-bottom: 1.5rem;
-  }
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 2rem;
+}
+
+.footer-section a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: white;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 1rem;
+}
+
+/* Scroll Animation */
+#about, #vision, #goals, #target-audience {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Goal Card Hover Effect */
+.goal-card {
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.goal-card-hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  background-color: #f9f9f9;
+}
+
+.goal-card-hover .goal-icon {
+  transform: rotate(15deg);
+  color: #0077cc;
+}
+
+/* Audience Card Hover Effect */
+.audience-card {
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.audience-card-hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  background-color: #f9f9f9;
+}
+
+.audience-card-hover .audience-icon {
+  transform: translateY(-10px);
+  color: #0077cc;
 }

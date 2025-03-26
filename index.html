@@ -1,230 +1,973 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>مبادرة دلني</title>
-  <meta name="description" content="مبادرة إرشادية لدعم طلاب كلية هندسة الحاسبات وعلومها بجامعة جدة" />
-  <meta name="keywords" content="دلني، إرشاد أكاديمي، جامعة جدة، دعم الطلاب" />
-  <link rel="stylesheet" href="index.css" />
+  <meta name="description" content="مبادرة إرشادية لدعم طلاب كلية هندسة الحاسبات وعلومها بجامعة جدة">
+  <meta name="keywords" content="دلني، إرشاد أكاديمي، جامعة جدة، دعم الطلاب">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap');
+
+    :root {
+      --primary-color: #003366;
+      --secondary-color: #0077cc;
+      --accent-color: #00a8e8;
+      --light-blue: #e6f7ff;
+      --white: #ffffff;
+      --light-gray: #f5f8fa;
+      --gray: #708090;
+      --dark-gray: #333333;
+      --box-shadow: 0 5px 15px rgba(0, 51, 102, 0.1);
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Tajawal', Arial, sans-serif;
+      background: var(--light-gray);
+      color: var(--dark-gray);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header__content {
+      position: relative;
+      padding: 6rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+      z-index: 1;
+    }
+
+    .header-wave {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 75px;
+      opacity: 0.6;
+    }
+
+    .header-logo {
+      width: 120px;
+      height: auto;
+      margin: 0 auto 2rem;
+      display: block;
+      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+    }
+
+    .heading-primary {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .header__text-box p {
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    /* ===== MAIN CONTENT ===== */
+    main {
+      position: relative;
+    }
+
+    section {
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .section-title {
+      color: var(--primary-color);
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: var(--secondary-color);
+      border-radius: 3px;
+    }
+
+    /* ===== ABOUT SECTION ===== */
+    #about {
+      background-color: var(--white);
+      border-radius: 10px;
+      box-shadow: var(--box-shadow);
+      margin-top: -50px;
+      z-index: 2;
+      position: relative;
+    }
+
+    .about-container {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    .about-image {
+      flex: 1;
+      text-align: center;
+    }
+
+    .about-image img {
+      max-width: 300px;
+      border-radius: 50%;
+      box-shadow: var(--box-shadow);
+    }
+
+    .about-content {
+      flex: 2;
+    }
+
+    .about-content p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ===== VISION SECTION ===== */
+    #vision {
+      background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 119, 204, 0.8)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600"><rect x="0" y="0" width="800" height="600" fill="%23003366"/><path d="M0 120 C 180 50, 300 150, 500 90 C 650 40, 750 90, 800 70 L 800 600 L 0 600 Z" fill="%230077cc" opacity="0.3"/><path d="M0 250 C 100 200, 300 250, 400 200 C 500 150, 600 200, 800 150 L 800 600 L 0 600 Z" fill="%230077cc" opacity="0.2"/></svg>');
+      background-size: cover;
+      color: var(--white);
+      text-align: center;
+      border-radius: 10px;
+      margin: 3rem auto;
+    }
+
+    .vision-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .vision-content p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+    }
+
+    .compass-icon {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      display: inline-block;
+    }
+
+    /* ===== GOALS SECTION ===== */
+    .goals-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .goal-card {
+      background-color: var(--white);
+      border-radius: 10px;
+      box-shadow: var(--box-shadow);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      transition: var(--transition);
+      border-bottom: 4px solid var(--secondary-color);
+    }
+
+    .goal-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 51, 102, 0.15);
+    }
+
+    .goal-icon {
+      font-size: 2.5rem;
+      color: var(--secondary-color);
+      margin-bottom: 1.5rem;
+      display: inline-block;
+    }
+
+    .goal-card h3 {
+      color: var(--primary-color);
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .goal-card p {
+      color: var(--gray);
+      font-size: 1rem;
+    }
+
+    /* ===== TARGET AUDIENCE SECTION ===== */
+    #target-audience {
+      background-color: var(--light-blue);
+      border-radius: 10px;
+      padding: 5rem 2rem;
+    }
+
+    .audience-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .audience-card {
+      background-color: var(--white);
+      border-radius: 10px;
+      box-shadow: var(--box-shadow);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      transition: var(--transition);
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .audience-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      background-color: var(--light-blue);
+      transition: var(--transition);
+      z-index: -1;
+    }
+
+    .audience-card:hover::before {
+      height: 100%;
+    }
+
+    .audience-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 51, 102, 0.15);
+    }
+
+    .audience-icon {
+      font-size: 2.5rem;
+      color: var(--secondary-color);
+      margin-bottom: 1.5rem;
+      display: inline-block;
+    }
+
+    .audience-card h3 {
+      color: var(--primary-color);
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .audience-card p {
+      color: var(--gray);
+      font-size: 1rem;
+    }
+
+    /* ===== ACHIEVEMENTS SECTION ===== */
+    #achievements {
+      text-align: center;
+    }
+
+    .achievements-text {
+      max-width: 800px;
+      margin: 0 auto 3rem;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .achievement-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+
+    .stat-card {
+      background-color: var(--primary-color);
+      color: var(--white);
+      border-radius: 10px;
+      padding: 2.5rem 1.5rem;
+      box-shadow: var(--box-shadow);
+      transition: var(--transition);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 51, 102, 0.2);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--white);
+    }
+
+    .stat-description {
+      font-size: 1.1rem;
+    }
+
+    /* ===== SERVICES SECTION ===== */
+    #services {
+      background-color: var(--white);
+      border-radius: 10px;
+      box-shadow: var(--box-shadow);
+      padding: 5rem 2rem;
+    }
+
+    .services-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .service-card {
+      background: linear-gradient(145deg, var(--white), var(--light-gray));
+      border-radius: 10px;
+      box-shadow: var(--box-shadow);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      transition: var(--transition);
+      border-left: 4px solid var(--secondary-color);
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 51, 102, 0.15);
+    }
+
+    .service-icon {
+      font-size: 2.5rem;
+      color: var(--secondary-color);
+      margin-bottom: 1.5rem;
+    }
+
+    .service-card h3 {
+      color: var(--primary-color);
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .service-card p {
+      color: var(--gray);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* ===== CONTACT SECTION ===== */
+    #contact {
+      text-align: center;
+      padding: 5rem 2rem;
+      background-color: var(--light-blue);
+      border-radius: 10px;
+      margin-bottom: 3rem;
+    }
+
+    .contact-content {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .contact-content p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .contact-email {
+      display: inline-block;
+      background-color: var(--white);
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--primary-color);
+      box-shadow: var(--box-shadow);
+      transition: var(--transition);
+      margin-top: 1rem;
+    }
+
+    .contact-email:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 51, 102, 0.15);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: linear-gradient(135deg, var(--primary-color), #002244);
+      color: var(--white);
+      padding: 4rem 2rem 1rem;
+      position: relative;
+    }
+
+    .footer-wave {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      transform: rotate(180deg);
+      opacity: 0.4;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-section h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .footer-section h3::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background-color: var(--accent-color);
+    }
+
+    .footer-section p, .footer-section a {
+      color: #ccc;
+      margin-bottom: 0.8rem;
+      display: block;
+      transition: var(--transition);
+    }
+
+    .footer-section a:hover {
+      color: var(--white);
+      transform: translateX(-5px);
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 3rem;
+      margin-top: 3rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* ===== RESPONSIVE DESIGN ===== */
+    @media (max-width: 992px) {
+      .heading-primary {
+        font-size: 2.8rem;
+      }
+      .about-container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .about-image {
+        margin-bottom: 2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .heading-primary {
+        font-size: 2.2rem;
+      }
+      .header__content {
+        padding: 4rem 1.5rem;
+      }
+      .header__text-box p {
+        font-size: 1.1rem;
+      }
+      .section-title {
+        font-size: 2rem;
+      }
+      section {
+        padding: 4rem 1.5rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .heading-primary {
+        font-size: 1.8rem;
+      }
+      .header-logo {
+        width: 80px;
+      }
+      .section-title {
+        font-size: 1.8rem;
+      }
+      .goal-card, .audience-card, .service-card {
+        padding: 2rem 1.5rem;
+      }
+    }
+
+    /* ===== MENTORS & LEADERS SECTIONS (KEPT AS REQUESTED) ===== */
+    .branches {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .branch-btn {
+      padding: 0.8rem 1.5rem;
+      border: none;
+      background: #003366;
+      color: white;
+      cursor: pointer;
+      font-size: 1rem;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+      font-family: 'Tajawal', Arial, sans-serif;
+    }
+
+    .branch-btn:hover {
+      background: #0055aa;
+      transform: translateY(-2px);
+    }
+
+    .branch-btn.active-branch {
+      background: #0077cc;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .mentor-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .mentor-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+
+    .mentor-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .mentor-image-container {
+      width: 100%;
+      height: 160px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f0f0;
+    }
+
+    .mentor-image {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .mentor-name {
+      color: #003366;
+      margin: 1rem 0 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .mentor-speciality {
+      color: #0077cc;
+      font-weight: 500;
+      margin: 0 0 1rem;
+    }
+
+    .mentor-about {
+      padding: 0 1.5rem;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      height: 80px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+      color: #333333;
+    }
+
+    .mentor-contact {
+      padding: 0 1.5rem 1.5rem;
+      color: #333333;
+    }
+
+    .contact-btn {
+      display: inline-block;
+      padding: 0.5rem 1.5rem;
+      background-color: #003366;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-btn:hover {
+      background-color: #0055aa;
+    }
+
+    .leaders-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .leader-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      text-align: center;
+      width: 300px;
+      padding-bottom: 1rem;
+    }
+
+    .leader-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .leader-image-container {
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f0f0;
+    }
+
+    .leader-image {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .leader-details {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .leader-name {
+      color: #003366;
+      margin: 0.5rem 0;
+      font-size: 1.4rem;
+    }
+
+    .leader-title {
+      color: #0077cc;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .leader-about {
+      color: #333333;
+      text-align: center;
+      margin-bottom: 1rem;
+      padding: 0 1rem;
+      line-height: 1.6;
+      height: 100px;
+      overflow: hidden;
+    }
+
+    /* Animation for sections */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.appear {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
 <body>
-  <header class="header" id="top">
-    <div class="header__container">
+  <header>
+    <div class="header__content">
+      <img src="images/Logo.png" alt="Dulani Logo" class="header-logo">
       <div class="header__text-box">
         <h1 class="heading-primary">مبادرة دلني</h1>
         <p>منارةٌ تُضيء طريق طلاب كلية هندسة الحاسبات وعلومها، خاصةً المستجدين الذين يبحثون عن دليلٍ يقودهم نحو الوجهة الصحيحة في عالمهم الأكاديمي</p>
       </div>
-      <img src="images/Logo.png" alt="Dulani Logo" class="header-logo">
     </div>
+    <svg class="header-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path fill="#ffffff" fill-opacity="1" d="M0,256L48,240C96,224,192,192,288,181.3C384,171,480,181,576,181.3C672,181,768,171,864,176C960,181,1056,203,1152,202.7C1248,203,1344,181,1392,170.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+    </svg>
   </header>
 
   <main>
-    <section id="about" class="section-container">
-      <div class="section-content">
-        <div class="section-image">
+    <section id="about" class="fade-in">
+      <h2 class="section-title">من نحن</h2>
+      <div class="about-container">
+        <div class="about-image">
           <img src="images/Logo2.png" alt="About Us Image">
         </div>
-        <div class="section-text">
-          <h2>من نحن</h2>
-          <p>مبادرة "دلني" هي منصة إرشادية لدعم الطلاب المستجدين، تقدم جلسات إرشاد فردية وجماعية، دورات تدريبية، ومحتوى تعليمي يساعدهم على تحقيق النجاح الأكاديمي والمهني.</p>
+        <div class="about-content">
+          <p>مبادرة "دلني" هي منصة إرشادية مبتكرة لدعم الطلاب المستجدين في كلية هندسة الحاسبات وعلومها، نقدم جلسات إرشاد فردية وجماعية، دورات تدريبية، ومحتوى تعليمي متميز يساعدهم على تخطي التحديات الأكاديمية وبناء مستقبلهم المهني بثقة وتميز.</p>
+          <p>نعمل كبوصلة ترشد الطلاب خلال رحلتهم الجامعية، ونساعدهم على اكتشاف إمكاناتهم وتطوير مهاراتهم بما يتناسب مع متطلبات سوق العمل المتجددة.</p>
         </div>
       </div>
     </section>
 
-    <section id="vision">
-      <div class="vision-overlay">
-        <div class="vision-content">
-          <h2>رؤيتنا المستقبلية</h2>
-          <p>نسعى لأن نكون المنارة التي ترشد الطلاب نحو مستقبل مشرق، مليء بالفرص، من خلال تقديم دعم إرشادي يعزز من فرص نجاحهم الأكاديمي والمهني.</p>
-        </div>
+    <section id="vision" class="fade-in">
+      <div class="vision-content">
+        <div class="compass-icon">⎈</div>
+        <h2 class="section-title" style="color: white;">رؤيتنا المستقبلية</h2>
+        <p>نسعى لأن نكون المنارة التي ترشد الطلاب نحو مستقبل مشرق، نهدف إلى بناء جيل من الخريجين المتميزين القادرين على المنافسة محلياً وعالمياً في مجالات علوم الحاسب المختلفة، من خلال تقديم دعم إرشادي مستمر ومتكامل يعزز من فرص نجاحهم الأكاديمي والمهني.</p>
       </div>
     </section>
 
-    <section id="goals">
-      <h2>أهدافنا</h2>
+    <section id="goals" class="fade-in">
+      <h2 class="section-title">أهدافنا</h2>
       <div class="goals-container">
         <div class="goal-card">
-          <span class="goal-icon">🎯</span>
+          <div class="goal-icon">🧭</div>
           <h3>تمكين الطلاب</h3>
-          <p>تقديم دعم أكاديمي واجتماعي لمساعدتهم على التكيف مع الحياة الجامعية بثقة.</p>
+          <p>تقديم دعم أكاديمي واجتماعي متكامل لمساعدة الطلاب على التكيف مع الحياة الجامعية بثقة وتحقيق التفوق في مسيرتهم العلمية.</p>
         </div>
         <div class="goal-card">
-          <span class="goal-icon">🌍</span>
+          <div class="goal-icon">🌊</div>
           <h3>إبراز المواهب</h3>
-          <p>نشر إنجازات الطلاب المتفوقين لإلهام زملائهم وتحفيزهم.</p>
+          <p>نشر إنجازات الطلاب المتفوقين وإبراز مواهبهم لإلهام زملائهم وتحفيزهم على الإبداع والابتكار في مجالات تخصصهم.</p>
         </div>
         <div class="goal-card">
-          <span class="goal-icon">📚</span>
+          <div class="goal-icon">⚓</div>
           <h3>تقديم دورات</h3>
-          <p>تجهيز الطلاب لسوق العمل عبر محتوى تعليمي متكامل.</p>
+          <p>تجهيز الطلاب لسوق العمل عبر محتوى تعليمي متميز وورش عمل متخصصة تنمي مهاراتهم التقنية والشخصية.</p>
         </div>
       </div>
     </section>
 
-    <section id="target-audience">
-      <h2>نستهدف</h2>
+    <section id="target-audience" class="fade-in">
+      <h2 class="section-title">نستهدف</h2>
       <div class="audience-container">
         <div class="audience-card">
-          <span class="audience-icon">🎓</span>
+          <div class="audience-icon">🚢</div>
           <h3>الطلاب المستجدين</h3>
-          <p>إرشاد أكاديمي لفهم التخصصات والتكيف مع الدراسة.</p>
+          <p>نقدم إرشاداً أكاديمياً متكاملاً لمساعدتهم على فهم التخصصات المختلفة والتكيف مع نظام الدراسة الجامعية.</p>
         </div>
         <div class="audience-card">
-          <span class="audience-icon">🌟</span>
+          <div class="audience-icon">🌟</div>
           <h3>المهتمون بالأنشطة</h3>
-          <p>الطلاب الراغبون في تطوير مهاراتهم والانضمام لمجتمع متفاعل.</p>
+          <p>نستهدف الطلاب الراغبين في تطوير مهاراتهم خارج نطاق الدراسة والانضمام لمجتمع طلابي متفاعل ومتميز.</p>
         </div>
         <div class="audience-card">
-          <span class="audience-icon">🏆</span>
+          <div class="audience-icon">🔱</div>
           <h3>الطلاب المتميزون</h3>
-          <p>من يسعون للتفوق الأكاديمي والمشاركة في دعم الآخرين.</p>
+          <p>نستقطب الطلاب الذين يسعون للتفوق الأكاديمي والمشاركة في دعم زملائهم وإثراء المجتمع الجامعي.</p>
         </div>
       </div>
     </section>
 
-    <section id="achievements">
-      <h2>إنجازاتنا</h2>
-      <p>في مبادرة "دلني"، نحتفل بإنجازات طلابنا الذين تحولوا من التائهين إلى القادة. من خلال جلسات إرشادية مكثفة ودعم مستمر، نجحنا في مساعدة العشرات من الطلاب على تحقيق أهدافهم الأكاديمية والمهنية.</p>
-      <ul>
-        <li><strong>50+</strong> طالب تم إرشادهم</li>
-        <li><strong>20+</strong> ورشة عمل</li>
-        <li><strong>10+</strong> ساعات إرشادية</li>
-      </ul>
+    <section id="achievements" class="fade-in">
+      <h2 class="section-title">إنجازاتنا</h2>
+      <div class="achievements-text">
+        <p>في مبادرة "دلني"، نحتفل بإنجازات طلابنا الذين تحولوا من التائهين إلى القادة. من خلال جلسات إرشادية مكثفة ودعم مستمر، نجحنا في مساعدة العشرات من الطلاب على تحقيق أهدافهم الأكاديمية والمهنية. قصص نجاحهم هي دليل على أن التوجيه الصحيح يمكن أن يغير مسار حياة الطالب.</p>
+      </div>
+      <div class="achievement-stats">
+        <div class="stat-card">
+          <div class="stat-number">٥٠+</div>
+          <div class="stat-description">طالب تم إرشادهم</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">٢٠+</div>
+          <div class="stat-description">ورشة عمل</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">١٠٠+</div>
+          <div class="stat-description">ساعات إرشادية</div>
+        </div>
+      </div>
     </section>
 
     <section id="leaders">
-      <h2>فريق القيادة</h2>
+      <h2 class="section-title">فريق القيادة</h2>
       <div class="leaders-container">
-        <section id="leaders">
-          <h2>فريق القيادة</h2>
-          <div class="leaders-container">
-            <div class="leader-card">
-              <div class="leader-image-container">
-                <img src="images/leader1.jpg" alt="ريناد المجايشي" class="leader-image">
-              </div>
-              <div class="leader-details">
-                <h3 class="leader-name">ريناد المجايشي</h3>
-                <p class="leader-title">قائدة وموؤسسة المبادرة</p>
-                <p class="leader-about">طالبة علوم بيانات و مهندسة ذكاء اصطناعي شغوفة الخ  .</p>
-                <div class="leader-contact">
-                  <a href="https://www.linkedin.com/in/renad-hassan-dataz/" target="_blank" class="contact-btn">
-                    LinkedIn
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                      <rect x="2" y="9" width="4" height="12"></rect>
-                      <circle cx="4" cy="4" r="2"></circle>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="leader-card">
-              <div class="leader-image-container">
-                <img src="/api/placeholder/120/120" alt="ميار حنيف" class="leader-image">
-              </div>
-              <div class="leader-details">
-                <h3 class="leader-name">ميار حنيف</h3>
-                <p class="leader-title"> الح</p>
-                <p class="leader-about">متخصصة في التنظيم والتنسيق، تساهم بفعالية في تطوير استراتيجيات المبادرة وتحقيق أهدافها.</p>
-                <div class="leader-contact">
-                  <a href="https://www.linkedin.com/in/example" target="_blank" class="contact-btn">
-                    LinkedIn
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                      <rect x="2" y="9" width="4" height="12"></rect>
-                      <circle cx="4" cy="4" r="2"></circle>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="leader-card">
-              <div class="leader-image-container">
-                <img src="/api/placeholder/120/120" alt="البتول العطاس" class="leader-image">
-              </div>
-              <div class="leader-details">
-                <h3 class="leader-name"> البتول العطاس</h3>
-                <p class="leader-title">الح </p>
-                <p class="leader-about">متخصصة في التنظيم والتنسيق، تساهم بفعالية في تطوير استراتيجيات المبادرة وتحقيق أهدافها.</p>
-                <div class="leader-contact">
-                  <a href="https://www.linkedin.com/in/example" target="_blank" class="contact-btn">
-                    LinkedIn
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                      <rect x="2" y="9" width="4" height="12"></rect>
-                      <circle cx="4" cy="4" r="2"></circle>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="leader-card">
-              <div class="leader-image-container">
-                <img src="/api/placeholder/120/120" alt="بثينة القرني" class="leader-image">
-              </div>
-              <div class="leader-details">
-                <h3 class="leader-name"> بثينة القرني</h3>
-                <p class="leader-title">ناة</p>
-                <p class="leader-about">متخصصة في التنظيم والتنسيق، تساهم بفعالية في تطوير استراتيجيات المبادرة وتحقيق أهدافها.</p>
-                <div class="leader-contact">
-                  <a href="https://www.linkedin.com/in/example" target="_blank" class="contact-btn">
-                    LinkedIn
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                      <rect x="2" y="9" width="4" height="12"></rect>
-                      <circle cx="4" cy="4" r="2"></circle>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="leader-card">
-              <div class="leader-image-container">
-                <img src="/api/placeholder/120/120" alt="اسيل بصنوي" class="leader-image">
-              </div>
-              <div class="leader-details">
-                <h3 class="leader-name">اسيل بصنوي</h3>
-                <p class="leader-title"> اا</p>
-                <p class="leader-about">متخصصة في التنظيم والتنسيق، تساهم بفعالية في تطوير استراتيجيات المبادرة وتحقيق أهدافها.</p>
-                <div class="leader-contact">
-                  <a href="https://www.linkedin.com/in/example" target="_blank" class="contact-btn">
-                    LinkedIn
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                      <rect x="2" y="9" width="4" height="12"></rect>
-                      <circle cx="4" cy="4" r="2"></circle>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="leader-card">
-              <div class="leader-image-container">
-                <img src="/api/placeholder/120/120" alt="ليان هائل" class="leader-image">
-              </div>
-              <div class="leader-details">
-                <h3 class="leader-name"> ليان هائل</h3>
-                <p class="leader-title"> h</p>
-                <p class="leader-about">متخصصة في التنظيم والتنسيق، تساهم بفعالية في تطوير استراتيجيات المبادرة وتحقيق أهدافها.</p>
-                <div class="leader-contact">
-                  <a href="https://www.linkedin.com/in/example" target="_blank" class="contact-btn">
-                    LinkedIn
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                      <rect x="2" y="9" width="4" height="12"></rect>
-                      <circle cx="4" cy="4" r="2"></circle>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <!-- -->
+        <div class="leader-card">
+          <div class="leader-image-container">
+            <img src="images/leader1.jpg" alt="ريناد المجايشي" class="leader-image">
           </div>
-      </section>
+          <div class="leader-details">
+            <h3 class="leader-name">ريناد المجايشي</h3>
+            <p class="leader-title">قائدة وموؤسسة المبادرة</p>
+            <p class="leader-about">طالبة علوم بيانات و مهندسة ذكاء اصطناعي شغوفة الخ  .</p>
+            <div class="leader-contact">
+              <a href="https://www.linkedin.com/in/renad-hassan-dataz/" target="_blank" class="contact-btn">
+                LinkedIn
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="leader-card">
+          <div class="leader-image-container">
+            <img src="/api/placeholder/120/120" alt="ميار حنيف" class="leader-image">
+          </div>
+          <div class="leader-details">
+            <h3 class="leader-name">ميار حنيف</h3>
+            <p class="leader-title"> الح</p>
+            <p class="leader-about">متخصصة في التنظيم والتنسيق، تساهم بفعالية في تطوير استراتيجيات المبادرة وتحقيق أهدافها.</p>
+            <div class="leader-contact">
+              <a href="https://www.linkedin.com/in/example" target="_blank" class="contact-btn">
+                LinkedIn
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="leader-card">
+          <div class="leader-image-container">
+            <img src="/api/placeholder/120/120" alt="البتول العطاس" class="leader-image">
+          </div>
+          <div class="leader-details">
+            <h3 class="leader-name"> البتول العطاس</h3>
+            <p class="leader-title">الح </p>
+            <p class="leader-about">متخصصة في التنظيم والتنسيق، تساهم بفعالية في تطوير استراتيجيات المبادرة وتحقيق أهدافها.</p>
+            <div class="leader-contact">
+              <a href="https://www.linkedin.com/in/example" target="_blank" class="contact-btn">
+                LinkedIn
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="leader-card">
+          <div class="leader-image-container">
+            <img src="/api/placeholder/120/120" alt="بثينة القرني" class="leader-image">
+          </div>
+          <div class="leader-details">
+            <h3 class="leader-name"> بثينة القرني</h3>
+            <p class="leader-title">ناة</p>
+            <p class="leader-about">متخصصة في التنظيم والتنسيق، تساهم بفعالية في تطوير استراتيجيات المبادرة وتحقيق أهدافها.</p>
+            <div class="leader-contact">
+              <a href="https://www.linkedin.com/in/example" target="_blank" class="contact-btn">
+                LinkedIn
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="leader-card">
+          <div class="leader-image-container">
+            <img src="/api/placeholder/120/120" alt="اسيل بصنوي" class="leader-image">
+          </div>
+          <div class="leader-details">
+            <h3 class="leader-name">اسيل بصنوي</h3>
+            <p class="leader-title"> اا</p>
+            <p class="leader-about">متخصصة في التنظيم والتنسيق، تساهم بفعالية في تطوير استراتيجيات المبادرة وتحقيق أهدافها.</p>
+            <div class="leader-contact">
+              <a href="https://www.linkedin.com/in/example" target="_blank" class="contact-btn">
+                LinkedIn
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="leader-card">
+          <div class="leader-image-container">
+            <img src="/api/placeholder/120/120" alt="ليان هائل" class="leader-image">
+          </div>
+          <div class="leader-details">
+            <h3 class="leader-name"> ليان هائل</h3>
+            <p class="leader-title"> h</p>
+            <p class="leader-about">متخصصة في التنظيم والتنسيق، تساهم بفعالية في تطوير استراتيجيات المبادرة وتحقيق أهدافها.</p>
+            <div class="leader-contact">
+              <a href="https://www.linkedin.com/in/example" target="_blank" class="contact-btn">
+                LinkedIn
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section id="mentors">
-      <h2>مرشدونا</h2>
+      <h2 class="section-title">مرشدونا</h2>
       <div class="branches">
         <button class="branch-btn" data-branch="cs">علوم الحاسب</button>
         <button class="branch-btn" data-branch="se">هندسة البرمجيات</button>
@@ -238,43 +981,52 @@
       </div>
     </section>
 
-    <section id="services">
-      <h2>خدماتنا</h2>
+    <section id="services" class="fade-in">
+      <h2 class="section-title">خدماتنا</h2>
       <div class="services-container">
         <div class="service-card">
           <div class="service-icon">📚</div>
           <h3>دعم أكاديمي</h3>
-          <p>مساعدة في فهم المواد الدراسية وحل الواجبات والتحضير للاختبارات</p>
+          <p>مساعدة في فهم المواد الدراسية وحل الواجبات والتحضير للاختبارات، وتقديم نصائح للتفوق الدراسي.</p>
         </div>
         <div class="service-card">
           <div class="service-icon">🧠</div>
           <h3>تطوير المهارات</h3>
-          <p>دورات وورش عمل لتطوير المهارات التقنية والشخصية</p>
+          <p>دورات وورش عمل متخصصة لتطوير المهارات التقنية والشخصية التي يحتاجها الطالب في الدراسة وسوق العمل.</p>
         </div>
         <div class="service-card">
           <div class="service-icon">👥</div>
           <h3>بناء الشبكات</h3>
-          <p>فرص للتواصل مع الخريجين والمتخصصين في مجال التقنية</p>
+          <p>فرص للتواصل مع الخريجين والمتخصصين في مجال التقنية، وبناء علاقات مهنية تدعم مسيرة الطالب المستقبلية.</p>
         </div>
         <div class="service-card">
           <div class="service-icon">🔍</div>
           <h3>توجيه مهني</h3>
-          <p>مساعدة في اختيار التخصص واستكشاف فرص العمل المستقبلية</p>
+          <p>مساعدة في اختيار التخصص المناسب واستكشاف فرص العمل المستقبلية في مجالات التقنية المختلفة.</p>
         </div>
       </div>
     </section>
 
-    <section id="contact">
-      <h2>تواصل معنا</h2>
-      <p>هل لديك أسئلة أو تحتاج إلى مزيد من المعلومات؟ نحن هنا لمساعدتك! تواصل معنا عبر البريد الإلكتروني، وكن جزءًا من رحلة "دلني".</p>
-      <div class="contact-info">
-        <p>البريد الإلكتروني: ujDulani@gmail.com</p>
+    <section id="contact" class="fade-in">
+      <h2 class="section-title">تواصل معنا</h2>
+      <div class="contact-content">
+        <p>هل لديك أسئلة أو تحتاج إلى مزيد من المعلومات؟ نحن هنا لمساعدتك! تواصل معنا عبر البريد الإلكتروني، وكن جزءًا من رحلة "دلني". سواء كنت طالبًا مستجدًا أو مرشدًا محتملًا، نحن نرحب بك في عائلة "دلني".</p>
+        <a href="mailto:ujDulani@gmail.com" class="contact-email">
+          ujDulani@gmail.com
+        </a>
       </div>
     </section>
   </main>
 
   <footer>
+    <svg class="footer-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path fill="#f5f8fa" fill-opacity="1" d="M0,256L48,240C96,224,192,192,288,181.3C384,171,480,181,576,181.3C672,181,768,171,864,176C960,181,1056,203,1152,202.7C1248,203,1344,181,1392,170.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+    </svg>
     <div class="footer-content">
+      <div class="footer-section">
+        <h3>تواصل معنا</h3>
+        <p>البريد الإلكتروني: ujDulani@gmail.com</p>
+      </div>
       <div class="footer-section">
         <h3>تابعنا</h3>
         <div class="social-links">
@@ -296,6 +1048,153 @@
     </div>
   </footer>
 
-  <script src="index.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      console.log("Dulani Website Loaded");
+
+      // Mentors Data with Detailed Styling
+      const mentorsData = {
+        cs: [
+          { name: "سارة أحمد", speciality: "علوم الحاسب", img: "/api/placeholder/120/120", about: "طالبة سنة رابعة، متخصصة في تطوير الخوارزميات وهياكل البيانات", email: "sara@example.com" },
+          { name: "محمد العمري", speciality: "علوم الحاسب", img: "/api/placeholder/120/120", about: "طالب سنة خامسة، خبرة في لغات البرمجة المتعددة والحوسبة السحابية", email: "mohammed@example.com" },
+          { name: "نورة السلمي", speciality: "علوم الحاسب", img: "/api/placeholder/120/120", about: "خريجة متفوقة، عملت في مشاريع بحثية في مجال الشبكات", email: "noura@example.com" },
+          { name: "عبدالله الغامدي", speciality: "علوم الحاسب", img: "/api/placeholder/120/120", about: "طالب سنة رابعة، مهتم بتطوير الويب وتطبيقات الجوال", email: "abdullah@example.com" },
+          { name: "لينا القحطاني", speciality: "علوم الحاسب", img: "/api/placeholder/120/120", about: "طالبة سنة خامسة، متخصصة في نظم التشغيل والبرمجة منخفضة المستوى", email: "lina@example.com" },
+          { name: "فهد الشهري", speciality: "علوم الحاسب", img: "/api/placeholder/120/120", about: "خريج، يعمل حالياً في شركة تقنية مرموقة كمطور برمجيات", email: "fahad@example.com" },
+          { name: "عبير المالكي", speciality: "علوم الحاسب", img: "/api/placeholder/120/120", about: "طالبة سنة رابعة، مهتمة بتطوير الألعاب وتقنيات الرسوميات", email: "abeer@example.com" }
+        ],
+        se: [
+          { name: "خالد الزهراني", speciality: "هندسة البرمجيات", img: "/api/placeholder/120/120", about: "طالب سنة خامسة، متخصص في هندسة البرمجيات وإدارة المشاريع", email: "khalid@example.com" },
+          { name: "رنا الحربي", speciality: "هندسة البرمجيات", img: "/api/placeholder/120/120", about: "خريجة، تعمل كمهندسة برمجيات في شركة ناشئة", email: "rana@example.com" },
+          { name: "سعد العتيبي", speciality: "هندسة البرمجيات", img: "/api/placeholder/120/120", about: "طالب سنة رابعة، مهتم بتطوير البرمجيات وأطر العمل الحديثة", email: "saad@example.com" },
+          { name: "منى الدوسري", speciality: "هندسة البرمجيات", img: "/api/placeholder/120/120", about: "طالبة سنة خامسة، متخصصة في اختبار البرمجيات وضمان الجودة", email: "mona@example.com" },
+          { name: "أحمد الشمراني", speciality: "هندسة البرمجيات", img: "/api/placeholder/120/120", about: "خريج، يعمل في تطوير الأنظمة المؤسسية والحلول التقنية", email: "ahmad@example.com" },
+          { name: "جواهر المطيري", speciality: "هندسة البرمجيات", img: "/api/placeholder/120/120", about: "طالبة سنة رابعة، مهتمة بهندسة المتطلبات وتصميم النظم", email: "jawaher@example.com" },
+          { name: "طارق الحازمي", speciality: "هندسة البرمجيات", img: "/api/placeholder/120/120", about: "طالب سنة خامسة، متخصص في معمارية البرمجيات وأنماط التصميم", email: "tariq@example.com" }
+        ],
+        cyber: [
+          { name: "هدى الجهني", speciality: "الأمن السيبراني", img: "/api/placeholder/120/120", about: "طالبة سنة رابعة، متخصصة في تحليل الثغرات الأمنية واختبار الاختراق", email: "huda@example.com" },
+          { name: "ياسر البلوي", speciality: "الأمن السيبراني", img: "/api/placeholder/120/120", about: "خريج، يعمل كمحلل أمن سيبراني في إحدى الشركات الرائدة", email: "yasser@example.com" },
+          { name: "سمية الرشيدي", speciality: "الأمن السيبراني", img: "/api/placeholder/120/120", about: "طالبة سنة خامسة، مهتمة بأمن الشبكات والأنظمة المتقدمة", email: "sumayah@example.com" },
+          { name: "معاذ القرني", speciality: "الأمن السيبراني", img: "/api/placeholder/120/120", about: "طالب سنة رابعة، متخصص في الطب الشرعي الرقمي والتحقيق الجنائي", email: "muath@example.com" },
+          { name: "نجود العنزي", speciality: "الأمن السيبراني", img: "/api/placeholder/120/120", about: "طالبة سنة خامسة، متخصصة في الدفاع السيبراني وتأمين البنية التحتية", email: "najoud@example.com" },
+          { name: "فيصل العسيري", speciality: "الأمن السيبراني", img: "/api/placeholder/120/120", about: "خريج، متخصص في أمن البرمجيات وتشفير البيانات", email: "faisal@example.com" },
+          { name: "ريم الحميد", speciality: "الأمن السيبراني", img: "/api/placeholder/120/120", about: "طالبة سنة رابعة، مهتمة بالأمن السحابي وحماية الأنظمة", email: "reem@example.com" }
+        ],
+        ai: [
+          { name: "عمر السلمان", speciality: "الذكاء الاصطناعي", img: "/api/placeholder/120/120", about: "طالب سنة خامسة، متخصص في تعلم الآلة والشبكات العصبية", email: "omar@example.com" },
+          { name: "أماني الصاعدي", speciality: "الذكاء الاصطناعي", img: "/api/placeholder/120/120", about: "خريجة، تعمل في مجال معالجة اللغات الطبيعية والروبوتات", email: "amani@example.com" },
+          { name: "راكان الدعجاني", speciality: "الذكاء الاصطناعي", img: "/api/placeholder/120/120", about: "طالب سنة رابعة، مهتم بتطبيقات الذكاء الاصطناعي في الطب", email: "rakan@example.com" },
+          { name: "دانية الثبيتي", speciality: "الذكاء الاصطناعي", img: "/api/placeholder/120/120", about: "طالبة سنة خامسة، متخصصة في الرؤية الحاسوبية والتعرف على الصور", email: "dania@example.com" },
+          { name: "سلطان العمري", speciality: "الذكاء الاصطناعي", img: "/api/placeholder/120/120", about: "خريج، يعمل في تطوير أنظمة التوصية والتنبؤ", email: "sultan@example.com" },
+          { name: "لميس الغامدي", speciality: "الذكاء الاصطناعي", img: "/api/placeholder/120/120", about: "طالبة سنة رابعة، مهتمة بالتعلم العميق وتطبيقاته", email: "lamees@example.com" },
+          { name: "وليد البقمي", speciality: "الذكاء الاصطناعي", img: "/api/placeholder/120/120", about: "طالب سنة خامسة، متخصص في تعلم التعزيز والأنظمة الذكية", email: "waleed@example.com" }
+        ],
+        ds: [
+          { name: "روان الشهري", speciality: "علوم البيانات", img: "/api/placeholder/120/120", about: "طالبة سنة رابعة، متخصصة في تحليل البيانات الضخمة وتصورها", email: "rawan@example.com" },
+          { name: "حسام الزهراني", speciality: "علوم البيانات", img: "/api/placeholder/120/120", about: "خريج، يعمل كمحلل بيانات في شركة استشارية", email: "hussam@example.com" },
+          { name: "غادة العتيبي", speciality: "علوم البيانات", img: "/api/placeholder/120/120", about: "طالبة سنة خامسة، مهتمة بالتنقيب عن البيانات والتحليل الإحصائي", email: "ghada@example.com" },
+          { name: "ماجد القحطاني", speciality: "علوم البيانات", img: "/api/placeholder/120/120", about: "طالب سنة رابعة، متخصص في استخراج المعرفة من البيانات", email: "majed@example.com" },
+          { name: "شهد الحربي", speciality: "علوم البيانات", img: "/api/placeholder/120/120", about: "طالبة سنة خامسة، متخصصة في تحليل الشبكات الاجتماعية والبيانات المهيكلة", email: "shahad@example.com" },
+          { name: "نايف الجهني", speciality: "علوم البيانات", img: "/api/placeholder/120/120", about: "خريج، يعمل في مجال تحليل البيانات السلوكية وتوقع الاتجاهات", email: "naif@example.com" },
+          { name: "أثير الشمراني", speciality: "علوم البيانات", img: "/api/placeholder/120/120", about: "طالبة سنة رابعة، مهتمة بعلم البيانات التطبيقي والنمذجة", email: "atheer@example.com" }
+        ],
+        ce: [
+          { name: "فراس الحازمي", speciality: "هندسة الحاسب والشبكات", img: "/api/placeholder/120/120", about: "طالب سنة خامسة، متخصص في تصميم الأنظمة المدمجة والمعالجات الدقيقة", email: "firas@example.com" },
+          { name: "نجلاء القرني", speciality: "هندسة الحاسب والشبكات", img: "/api/placeholder/120/120", about: "خريجة، تعمل في مجال تطوير الأجهزة والبرمجيات المدمجة", email: "najla@example.com" },
+          { name: "مشاري العتيبي", speciality: "هندسة الحاسب والشبكات", img: "/api/placeholder/120/120", about: "طالب سنة رابعة، مهتم بالأنظمة الرقمية والإلكترونيات", email: "mishari@example.com" },
+          { name: "هند الدوسري", speciality: "هندسة الحاسب والشبكات", img: "/api/placeholder/120/120", about: "طالبة سنة خامسة، متخصصة في معمارية الحاسب والأداء", email: "hind@example.com" },
+          { name: "ريان الشهراني", speciality: "هندسة الحاسب والشبكات", img: "/api/placeholder/120/120", about: "خريج، يعمل في تصميم وتنفيذ أنظمة التحكم الآلي", email: "rayan@example.com" },
+          { name: "مرام السلمي", speciality: "هندسة الحاسب والشبكات", img: "/api/placeholder/120/120", about: "طالبة سنة رابعة، مهتمة بأنظمة الزمن الحقيقي وإنترنت الأشياء", email: "maram@example.com" },
+          { name: "يزيد الزهراني", speciality: "هندسة الحاسب والشبكات", img: "/api/placeholder/120/120", about: "طالب سنة خامسة، متخصص في الأنظمة الموزعة والحوسبة المتوازية", email: "yazeed@example.com" }
+        ]
+      };
+
+      // Function to render mentors
+      function renderMentors(branch) {
+        const mentorsList = document.getElementById("mentors-list");
+        mentorsList.innerHTML = ''; // Clear previous mentors
+
+        // Check if mentors exist for this branch
+        if (!mentorsData[branch]) {
+          mentorsList.innerHTML = "<p>لا يوجد مرشدون متاحون لهذا التخصص حاليًا</p>";
+          return;
+        }
+
+        // Create mentor grid
+        const mentorGrid = document.createElement("div");
+        mentorGrid.classList.add("mentor-grid");
+
+        // Add mentors to the grid
+        mentorsData[branch].forEach(mentor => {
+          const mentorCard = document.createElement("div");
+          mentorCard.classList.add("mentor-card");
+          
+          mentorCard.innerHTML = `
+            <div class="mentor-image-container">
+              <img src="${mentor.img}" alt="${mentor.name}" class="mentor-image">
+            </div>
+            <div class="mentor-details">
+              <h3 class="mentor-name">${mentor.name}</h3>
+              <p class="mentor-speciality">${mentor.speciality}</p>
+              <p class="mentor-about">${mentor.about}</p>
+              <div class="mentor-contact">
+                <a href="mailto:${mentor.email}" class="contact-btn">
+                  تواصل
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          `;
+          
+          mentorGrid.appendChild(mentorCard);
+        });
+
+        // Add the grid to the mentors list
+        mentorsList.appendChild(mentorGrid);
+      }
+
+      // Add click event listeners to branch buttons
+      document.querySelectorAll(".branch-btn").forEach(button => {
+        button.addEventListener("click", function() {
+          // Remove active class from all buttons
+          document.querySelectorAll(".branch-btn").forEach(btn => {
+            btn.classList.remove("active-branch");
+          });
+          
+          // Add active class to clicked button
+          this.classList.add("active-branch");
+          
+          // Get the branch value from data attribute
+          const branch = this.dataset.branch;
+          
+          // Render mentors for the selected branch
+          renderMentors(branch);
+        });
+      });
+
+      // Trigger click on the first button to show mentors by default
+      if (document.querySelector(".branch-btn")) {
+        document.querySelector(".branch-btn").click();
+      }
+
+      // Scroll animations
+      const fadeElements = document.querySelectorAll('.fade-in');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('appear');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      fadeElements.forEach(element => {
+        observer.observe(element);
+      });
+    });
+  </script>
 </body>
 </html>
