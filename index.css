@@ -8,6 +8,7 @@ body {
   margin: 0;
   direction: rtl;
 }
+
 header {
   background: linear-gradient(135deg, #003366, #004080);
   color: white;
@@ -44,12 +45,12 @@ header {
   .header__container {
     flex-direction: column;
   }
-  
+
   .header-logo {
     margin: 0 0 1rem 0;
     width: 60px;
   }
-  
+
   .header__text-box {
     text-align: center;
   }
@@ -81,84 +82,65 @@ h2::after {
   background-color: #003366;
 }
 
-/* ----- Leaders Section ----- */
-.leaders-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin: 2rem 0;
-}
-
-.leader-box {
-  background-color: white;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-  width: 250px;
-  transition: transform 0.3s ease;
+/* ----- Modernized About & Vision Sections ----- */
+#about, #vision {
+  background: white;
+  padding: 4rem 2rem;
   text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#about p, #vision p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #444;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#vision {
+  background: url('vision-bg.jpg') center/cover;
+  padding: 5rem 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.vision-overlay {
+  background: rgba(0, 51, 102, 0.7);
+  padding: 3rem;
+  border-radius: 10px;
+  display: inline-block;
+  color: white;
+}
+
+/* ----- Goals Section (Card Layout) ----- */
+.goals-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.leader-box:hover {
-  transform: translateY(-5px);
-}
-
-.leader-box p {
-  font-weight: 500;
-  margin: 0.5rem 0 0;
-  color: #003366;
-}
-
-.leader-image-container {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-bottom: 1rem;
-  border: 3px solid #003366;
-}
-
-.leader-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.leader-box .leader-title {
-  font-size: 0.9rem;
-  color: #0077cc;
-}
-
-/* ----- Achievements Section ----- */
-#achievements ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
+  flex-wrap: wrap;
 }
 
-#achievements li {
-  background-color: #003366;
+.goal-card {
+  background: white;
   padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-  width: 200px;
-  font-size: 1.2rem;
-  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
+  transition: 0.3s ease;
+  width: 300px;
 }
 
-#achievements strong {
-  display: block;
+.goal-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.goal-icon {
   font-size: 2rem;
-  color: #ffffff;
-  margin-bottom: 0.5rem;
+  display: block;
+  margin-bottom: 1rem;
 }
 
 /* ----- Mentors Section ----- */
@@ -276,43 +258,52 @@ h2::after {
   background-color: #0055aa;
 }
 
-/* ----- Services Section ----- */
-.services-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
+/* ----- Leaders Section ----- */
+.leaders-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 2rem;
-  margin-top: 2rem;
+  margin: 2rem 0;
 }
 
-.service-card {
+/* ----- Achievements Section ----- */
+#achievements ul {
+  list-style: none;
+  padding: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  background-color: white;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+#achievements li {
+  background-color: #003366;
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  width: 200px;
+  font-size: 1.2rem;
+  color: #ffffff;
+  text-align: center;
 }
 
-.service-card:hover {
-  transform: translateY(-5px);
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .section-container {
+    flex-direction: column;
+    text-align: center;
+  }
 
-.service-icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #003366;
-}
+  .section-content {
+    flex-direction: column;
+  }
 
-.service-card h3 {
-  color: #003366;
-  margin-bottom: 1rem;
-}
-
-.service-card p {
-  color: #333333;
+  .goals-container, .audience-container, .mentor-grid {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /* ----- Footer ----- */
@@ -336,16 +327,9 @@ footer {
   margin-bottom: 2rem;
 }
 
-.footer-section h3 {
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-}
-
 .footer-section a {
   color: #ccc;
   text-decoration: none;
-  display: block;
-  margin-bottom: 0.5rem;
   transition: color 0.3s ease;
 }
 
@@ -353,71 +337,7 @@ footer {
   color: white;
 }
 
-.social-links {
-  display: flex;
-  gap: 1rem;
-}
-
-.social-link {
-  padding: 0.5rem;
-}
-
 .footer-bottom {
   text-align: center;
   padding-top: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* About section text color */
-#about p {
-  color: #333333;
-  max-width: 800px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
-/* Center text in main sections */
-section p {
-  text-align: center;
-  margin: 0 auto;
-  max-width: 800px;
-  color: #333333;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-  .branches {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .branch-btn {
-    width: 80%;
-  }
-  
-  .mentor-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .services-container {
-    grid-template-columns: 1fr;
-  }
-  
-  #achievements ul {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  #achievements li {
-    width: 80%;
-  }
-  
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .social-links {
-    justify-content: center;
-  }
 }
