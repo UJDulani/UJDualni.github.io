@@ -45,12 +45,12 @@ header {
   .header__container {
     flex-direction: column;
   }
-  
+
   .header-logo {
     margin: 0 0 1rem 0;
     width: 60px;
   }
-  
+
   .header__text-box {
     text-align: center;
   }
@@ -152,40 +152,101 @@ h2::after {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
   width: 250px;
   transition: transform 0.3s ease;
+>>>>>>> 4dbeb0d33be03ff93ec9eed8cc17ebf5f44444ba
   text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#about p, #vision p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #444;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#vision {
+  background: url('vision-bg.jpg') center/cover;
+  padding: 5rem 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.vision-overlay {
+  background: rgba(0, 51, 102, 0.7);
+  padding: 3rem;
+  border-radius: 10px;
+  display: inline-block;
+  color: white;
+}
+
+/* ----- Goals Section (Card Layout) ----- */
+.goals-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
-.leader-box:hover {
+.goal-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: 0.3s ease;
+  width: 300px;
+}
+
+.goal-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
-.leader-box p {
-  font-weight: 500;
-  margin: 0.5rem 0 0;
-  color: #003366;
-}
-
-.leader-image-container {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  overflow: hidden;
+.goal-icon {
+  font-size: 2rem;
+  display: block;
   margin-bottom: 1rem;
-  border: 3px solid #003366;
 }
 
-.leader-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+<<<<<<< HEAD
+/* ----- Target Audience Section (Interactive Cards) ----- */
+.audience-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
-.leader-box .leader-title {
-  font-size: 0.9rem;
-  color: #0077cc;
+.audience-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+  width: 280px;
+}
+
+.audience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.audience-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+/* ----- Leaders Section ----- */
+.leaders-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
 }
 
 /* ----- Achievements Section ----- */
@@ -209,13 +270,77 @@ h2::after {
   text-align: center;
 }
 
-#achievements strong {
-  display: block;
-  font-size: 2rem;
-  color: #ffffff;
-  margin-bottom: 0.5rem;
+/* Responsive Design */
+@media (max-width: 768px) {
+  .section-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .section-content {
+    flex-direction: column;
+  }
+
+  .goals-container, .audience-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
+/* ----- Footer ----- */
+footer {
+  background: linear-gradient(135deg, #002244, #003366);
+  color: white;
+  padding: 3rem 2rem 1rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.footer-section a {
+  color: #ccc;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: white;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-link {
+  padding: 0.5rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+=======
 /* Responsive Design */
 @media (max-width: 768px) {
   .branches {
@@ -253,3 +378,5 @@ h2::after {
     justify-content: center;
   }
 }
+
+>>>>>>> 4dbeb0d33be03ff93ec9eed8cc17ebf5f44444ba
