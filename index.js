@@ -59,6 +59,53 @@ document.addEventListener("DOMContentLoaded", function() {
     ]
   };
 
+  // Function to render mentors
+  function renderMentors(branch) {
+    const mentorsList = document.getElementById("mentors-list");
+    mentorsList.innerHTML = ''; // Clear previous mentors
+
+    // Check if mentors exist for this branch
+    if (!mentorsData[branch]) {
+      mentorsList.innerHTML = "<p>لا يوجد مرشدون متاحون لهذا التخصص حاليًا</p>";
+      return;
+    }
+
+    // Create mentor grid
+    const mentorGrid = document.createElement("div");
+    mentorGrid.classList.add("mentor-grid");
+
+    // Add mentors to the grid
+    mentorsData[branch].forEach(mentor => {
+      const mentorCard = document.createElement("div");
+      mentorCard.classList.add("mentor-card");
+      
+      mentorCard.innerHTML = `
+        <div class="mentor-image-container">
+          <img src="${mentor.img}" alt="${mentor.name}" class="mentor-image">
+        </div>
+        <div class="mentor-details">
+          <h3 class="mentor-name">${mentor.name}</h3>
+          <p class="mentor-speciality">${mentor.speciality}</p>
+          <p class="mentor-about">${mentor.about}</p>
+          <div class="mentor-contact">
+            <a href="mailto:${mentor.email}" class="contact-btn">
+              تواصل
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      `;
+      
+      mentorGrid.appendChild(mentorCard);
+    });
+
+    // Add the grid to the mentors list
+    mentorsList.appendChild(mentorGrid);
+  }
+
   // Add click event listeners to branch buttons
   document.querySelectorAll(".branch-btn").forEach(button => {
     button.addEventListener("click", function() {
@@ -72,55 +119,12 @@ document.addEventListener("DOMContentLoaded", function() {
       
       // Get the branch value from data attribute
       const branch = this.dataset.branch;
-      const mentorsList = document.getElementById("mentors-list");
       
-      // Clear the mentors list
-      mentorsList.innerHTML = "";
-      
-      // Check if mentors exist for this branch
-      if (!mentorsData[branch]) {
-        mentorsList.innerHTML = "<p>لا يوجد مرشدون متاحون لهذا التخصص حاليًا</p>";
-        return;
-      }
-      
-      // Create the mentor grid container
-      const mentorGrid = document.createElement("div");
-      mentorGrid.classList.add("mentor-grid");
-      
-      // Add mentors to the grid
-      mentorsData[branch].forEach(mentor => {
-        const mentorCard = document.createElement("div");
-        mentorCard.classList.add("mentor-card");
-        
-        // Create a more detailed mentor card with enhanced styling
-        mentorCard.innerHTML = `
-          <div class="mentor-image-container">
-            <img src="${mentor.img}" alt="${mentor.name}" class="mentor-image">
-          </div>
-          <div class="mentor-details">
-            <h3 class="mentor-name">${mentor.name}</h3>
-            <p class="mentor-speciality">${mentor.speciality}</p>
-            <p class="mentor-about">${mentor.about}</p>
-            <div class="mentor-contact">
-              <a href="mailto:${mentor.email}" class="contact-btn">
-                تواصل
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                  <polyline points="22,6 12,13 2,6"></polyline>
-                </svg>
-              </a>
-            </div>
-          </div>
-        `;
-        
-        mentorGrid.appendChild(mentorCard);
-      });
-      
-      // Add the grid to the mentors list
-      mentorsList.appendChild(mentorGrid);
+      // Render mentors for the selected branch
+      renderMentors(branch);
     });
   });
-  
+
   // Trigger click on the first button to show mentors by default
   if (document.querySelector(".branch-btn")) {
     document.querySelector(".branch-btn").click();
