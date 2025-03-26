@@ -82,77 +82,10 @@ h2::after {
   background-color: #003366;
 }
 
-/* ----- About & Vision Sections ----- */
+/* ----- Modernized About & Vision Sections ----- */
 #about, #vision {
   background: white;
   padding: 4rem 2rem;
-  text-align: center;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-#about p, #vision p {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  color: #444;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-/* ----- Goals Section ----- */
-#goals ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-}
-
-#goals li {
-  background: #ffffff;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  font-size: 1.1rem;
-  color: #333;
-  width: 300px;
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
-#goals li:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-}
-
-/* ----- Target Audience Section ----- */
-#target-audience .service-card {
-  transition: all 0.3s ease;
-}
-
-#target-audience .service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* ----- Leaders Section ----- */
-.leaders-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin: 2rem 0;
-}
-
-.leader-box {
-  background-color: white;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-  width: 250px;
-  transition: transform 0.3s ease;
->>>>>>> 4dbeb0d33be03ff93ec9eed8cc17ebf5f44444ba
   text-align: center;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -210,7 +143,6 @@ h2::after {
   margin-bottom: 1rem;
 }
 
-<<<<<<< HEAD
 /* ----- Target Audience Section (Interactive Cards) ----- */
 .audience-container {
   display: flex;
@@ -339,44 +271,3 @@ footer {
   padding-top: 1rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
-
-=======
-/* Responsive Design */
-@media (max-width: 768px) {
-  .branches {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .branch-btn {
-    width: 80%;
-  }
-  
-  .mentor-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .services-container {
-    grid-template-columns: 1fr;
-  }
-  
-  #achievements ul {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  #achievements li {
-    width: 80%;
-  }
-  
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .social-links {
-    justify-content: center;
-  }
-}
-
->>>>>>> 4dbeb0d33be03ff93ec9eed8cc17ebf5f44444ba
