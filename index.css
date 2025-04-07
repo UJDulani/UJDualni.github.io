@@ -360,7 +360,7 @@ h2::after {
     flex-direction: column;
     text-align: center;
   }
-  
+
   .logo{width:219px}
 
   .section-content {
@@ -373,37 +373,56 @@ h2::after {
   }
 }
 
-/* Sign up section */
+/* Sign up // join-us section */
 
-#signup-options {
+#join-us {
   background: linear-gradient(to right, #f8f9fa, #e3f2fd);
   padding: 60px 20px;
   text-align: center;
 }
 
-.signup-card{
-  background: white;
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.join-us-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.join-card {
+  background: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  padding: 40px;
-  max-width: 600px;
-  margin: 0 auto;
+  padding: 30px 20px;
+  max-width: 300px;
+  flex: 1 1 280px;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-
-.signup-card h2 {
-  font-size: 2rem;
-  margin-bottom: 16px;
+.join-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
 
-.signup-card p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
+.join-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #007BFF;
+}
+
+.join-card p {
+  font-size: 1rem;
   color: #444;
+  margin-bottom: 20px;
 }
 
-.signup-btn {
-  padding: 10px 24px;
+.join-btn {
+  padding: 10px 20px;
   background-color: #007BFF;
   color: white;
   border-radius: 6px;
@@ -411,9 +430,10 @@ h2::after {
   transition: background-color 0.3s;
 }
 
-.signup-btn:hover {
+.join-btn:hover {
   background-color: #0056b3;
 }
+
 
 /* reviwes */
 
