@@ -179,7 +179,7 @@ document.addEventListener("DOMContentLoaded", function() {
 const reviewCards = document.querySelectorAll('.review-card');
 let currentReview = 0;
 
-function cycleReviews() {
+function showReview() {
   reviewCards.forEach((card, idx) => {
     card.classList.remove('active');
     if (idx === currentReview) card.classList.add('active');
@@ -188,8 +188,5 @@ function cycleReviews() {
   currentReview = (currentReview + 1) % reviewCards.length;
 }
 
-// First call
-cycleReviews();
-
-// Auto switch every 30 seconds
-setInterval(cycleReviews, 30000);
+showReview();
+setInterval(showReview, 30000); // every 30 seconds
