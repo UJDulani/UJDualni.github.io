@@ -373,25 +373,44 @@ h2::after {
 
 /* Sign up section */
 
-.signup-options {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin: 40px 0;
+#signup-options {
+  background: linear-gradient(to right, #f8f9fa, #e3f2fd);
+  padding: 60px 20px;
+  text-align: center;
 }
 
-.signup-button {
-  padding: 12px 20px;
-  background-color: #1e3a8a;
-  color: #fff;
+.signup-card{
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 40px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+
+.signup-card h2 {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.signup-card p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.signup-btn {
+  padding: 10px 24px;
+  background-color: #007BFF;
+  color: white;
+  border-radius: 6px;
   text-decoration: none;
-  border-radius: 10px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s;
 }
 
-.signup-button:hover {
-  background-color: #3b82f6;
+.signup-btn:hover {
+  background-color: #0056b3;
 }
 
 /* reviwes */
@@ -403,11 +422,31 @@ h2::after {
 }
 
 .review-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
   max-width: 600px;
   margin: 0 auto;
   position: relative;
   min-height: 200px;
 }
+
+.review-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  max-width: 300px;
+  transition: transform 0.3s;
+}
+
+
+.review-card:hover {
+  transform: translateY(-5px);
+}
+
+
 
 .review {
   display: none;
@@ -487,6 +526,13 @@ footer {
   text-align: center;
   padding-top: 1rem;
 }
+.footer-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
 
 /* Footer Logo uj */
 
@@ -499,6 +545,11 @@ footer {
 .footer-logo {
   text-align: center;
   margin-top: 20px;
+}
+
+.footer-logo {
+  max-width: 120px;
+  height: auto;
 }
 
 .footer-logo img {
