@@ -387,38 +387,43 @@ h2::after {
   color: #333;
 }
 
-.join-us-container {
+.cards-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
+  padding: 40px 0;
 }
 
-.join-card {
-  background: #fff;
+.card {
+  background-color: white;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
   padding: 30px 20px;
-  max-width: 300px;
-  flex: 1 1 280px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  width: 280px;
+  transition: transform 0.3s ease;
 }
 
-.join-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+.card:hover {
+  transform: translateY(-8px);
 }
 
-.join-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
+.card i {
+  font-size: 2.5rem;
   color: #007BFF;
+  margin-bottom: 15px;
 }
 
-.join-card p {
-  font-size: 1rem;
+.card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.card p {
   color: #444;
-  margin-bottom: 20px;
+  font-size: 1rem;
+  margin-bottom: 15px;
 }
 
 .join-btn {
