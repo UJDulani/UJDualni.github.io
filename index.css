@@ -489,21 +489,24 @@ footer {
 }
 
 /* Footer Logo uj */
-.footer-logo {
-  text-align: center;
-  margin-top: 6px;
-}
 
 .footer-logo {
   margin: 0 0 1rem 0;
   width: 60px;
 }
 
-.footer-logo img {
-  width: 80px;
-  height: auto;
-  margin-left: 2rem;
+/* Center and resize the footer logo */
+.footer-logo {
+  text-align: center;
+  margin-top: 20px;
 }
+
+.footer-logo img {
+  width: 80px; /* adjust size as needed */
+  height: auto;
+  display: inline-block;
+}
+
 
 /* Scroll Animation */
 #about, #vision, #goals, #target-audience {
