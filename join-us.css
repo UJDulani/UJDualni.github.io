@@ -138,4 +138,107 @@ footer {
     height: auto;
     display: inline-block;
   }
+
+  #testimonials {
+    background: #2196F3;
+    padding: 80px 20px;
+    text-align: center;
+    direction: rtl;
+  }
+  
+  .section-title {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+  
+  .testimonial-slider {
+    overflow: hidden;
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  .testimonial-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .testimonial-card {
+    flex: 0 0 100%;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    padding: 40px 30px;
+    margin: 0 15px;
+    opacity: 0.5;
+    transform: scale(0.9);
+    transition: all 0.4s ease;
+  }
+  
+  .testimonial-card.active {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  .testimonial-card .quote {
+    font-size: 1.2rem;
+    color: #444;
+    margin-bottom: 25px;
+    position: relative;
+  }
+  
+  .testimonial-card .quote::before {
+    content: "❝";
+    font-size: 2rem;
+    color: #bbb;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+  }
+  
+  .profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  
+  .profile .info h4 {
+    margin: 0;
+    font-size: 1rem;
+    color: #007BFF;
+  }
+  
+  .profile .info span {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .testimonial-nav {
+    margin-top: 30px;
+  }
+  
+  .testimonial-nav button {
+    background-color: white;
+    color: #007BFF;
+    border: none;
+    font-size: 1.8rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .testimonial-nav button:hover {
+    background-color: #f0f0f0;
+  }
   

@@ -175,43 +175,30 @@ document.addEventListener("DOMContentLoaded", function() {
   setupScrollAnimations();
 });
 
-// reviews
 
-const reviews = [
-  {
-    img: "images/reviews/AseelAI.jpeg",
-    name: "اسيل المحمدي",
-    position: "مرشدة - مهندسة ذكاء أصطناعي ",
-    text: "تجربتي كمرشدة في دلني كانت من أجمل المبادرات؛ فيها أيقنت أن الأثر الحقيقي يبدأ بكلمة، ويُخلّد بدعم صادق.ليست مجرد توجيه، بل مشاركة في صناعة مستقبل واعد واختصارٌ لمعنى الأثر الحقيقي" },
-  {
-    img: "images/reviews/AbrarDS.jpeg",
-    name: "ابرار حبيب الله ",
-    position: "مرشدة - عالمة بيانات ",
-    text: " "
-  },
-  // Add 6 more like this...
-];
+let currentSlide = 0;
+const testimonials = document.querySelectorAll('.testimonial-card');
 
-let currentReview = 0;
+function updateTestimonials() {
+  testimonials.forEach((card, index) => {
+    card.classList.remove('active');
+    if (index === currentSlide) {
+      card.classList.add('active');
+    }
+  });
 
-function showReview(index) {
-  const container = document.getElementById('review-carousel');
-  container.innerHTML = `
-    <div class="review active">
-      <img src="${reviews[index].img}" alt="${reviews[index].name}" />
-      <h4>${reviews[index].name}</h4>
-      <span>${reviews[index].position}</span>
-      <p>${reviews[index].text}</p>
-    </div>
-  `;
+  const track = document.querySelector('.testimonial-track');
+  track.style.transform = `translateX(-${currentSlide * 100}%)`;
 }
 
-setInterval(() => {
-  currentReview = (currentReview + 1) % reviews.length;
-  showReview(currentReview);
-}, 4000);
-
-// Initial load
-document.addEventListener('DOMContentLoaded', () => {
-  showReview(currentReview);
+document.getElementById('next').addEventListener('click', () => {
+  currentSlide = (currentSlide + 1) % testimonials.length;
+  updateTestimonials();
 });
+
+document.getElementById('prev').addEventListener('click', () => {
+  currentSlide = (currentSlide - 1 + testimonials.length) % testimonials.length;
+  updateTestimonials();
+});
+
+document.addEventListener('DOMContentLoaded', updateTestimonials);
