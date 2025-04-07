@@ -371,6 +371,79 @@ h2::after {
   }
 }
 
+/* Sign up section */
+
+.signup-options {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.signup-button {
+  padding: 12px 20px;
+  background-color: #1e3a8a;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.signup-button:hover {
+  background-color: #3b82f6;
+}
+
+/* reviwes */
+
+#reviews {
+  padding: 50px 20px;
+  text-align: center;
+  background: #f4f4f4;
+}
+
+.review-container {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  min-height: 200px;
+}
+
+.review {
+  display: none;
+  animation: fade 1s ease-in-out;
+}
+
+.review.active {
+  display: block;
+}
+
+.review img {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.review h4 {
+  margin: 10px 0 5px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.review span {
+  display: block;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 /* ----- Footer ----- */
 footer {
   background: linear-gradient(135deg, #002244, #003366);
@@ -452,78 +525,4 @@ footer {
   transform: translateY(-10px);
   color: #0077cc;
 }
-
-/* Sign up section */
-
-.signup-options {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin: 40px 0;
-}
-
-.signup-button {
-  padding: 12px 20px;
-  background-color: #1e3a8a;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 10px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.signup-button:hover {
-  background-color: #3b82f6;
-}
-
-/* reviwes */
-
-#reviews {
-  padding: 50px 20px;
-  text-align: center;
-  background: #f4f4f4;
-}
-
-.review-container {
-  max-width: 600px;
-  margin: 0 auto;
-  position: relative;
-  min-height: 200px;
-}
-
-.review {
-  display: none;
-  animation: fade 1s ease-in-out;
-}
-
-.review.active {
-  display: block;
-}
-
-.review img {
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
-
-.review h4 {
-  margin: 10px 0 5px;
-  font-size: 18px;
-  font-weight: 600;
-}
-
-.review span {
-  display: block;
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 10px;
-}
-
-@keyframes fade {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
 
