@@ -445,10 +445,18 @@ h2::after {
 }
 
 /* ----- Footer ----- */
+
 footer {
   background: linear-gradient(135deg, #002244, #003366);
   color: white;
   padding: 3rem 2rem 1rem;
+}
+
+.footer__container {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .footer-content {
@@ -484,6 +492,11 @@ footer {
 .footer-logo {
   text-align: center;
   margin-top: 6px;
+}
+
+.footer-logo {
+  margin: 0 0 1rem 0;
+  width: 60px;
 }
 
 .footer-logo img {
