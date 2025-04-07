@@ -174,3 +174,44 @@ document.addEventListener("DOMContentLoaded", function() {
   setupInteractiveCards();
   setupScrollAnimations();
 });
+
+// reviews
+
+const reviews = [
+  {
+    img: "images/reviews/AseelAI.jpeg",
+    name: "Aseel",
+    position: "Mentor - AI engineer",
+    text: "تجربتي كمرشدة في دلني كانت من أجمل المبادرات؛ فيها أيقنت أن الأثر الحقيقي يبدأ بكلمة، ويُخلّد بدعم صادق.ليست مجرد توجيه، بل مشاركة في صناعة مستقبل واعد واختصارٌ لمعنى الأثر الحقيقي" },
+  {
+    img: "images/reviews/AbrarDS.jpeg",
+    name: "Abrar ",
+    position: "Mentor",
+    text: " "
+  },
+  // Add 6 more like this...
+];
+
+let currentReview = 0;
+
+function showReview(index) {
+  const container = document.getElementById('review-carousel');
+  container.innerHTML = `
+    <div class="review active">
+      <img src="${reviews[index].img}" alt="${reviews[index].name}" />
+      <h4>${reviews[index].name}</h4>
+      <span>${reviews[index].position}</span>
+      <p>${reviews[index].text}</p>
+    </div>
+  `;
+}
+
+setInterval(() => {
+  currentReview = (currentReview + 1) % reviews.length;
+  showReview(currentReview);
+}, 4000);
+
+// Initial load
+document.addEventListener('DOMContentLoaded', () => {
+  showReview(currentReview);
+});
