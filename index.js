@@ -189,4 +189,4 @@ function showReview() {
 }
 
 showReview();
-setInterval(showReview, 30000); // every 30 seconds
+setInterval(showReview, 10000); // ⏱ 10 seconds per review
