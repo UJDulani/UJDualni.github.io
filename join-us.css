@@ -213,7 +213,7 @@ footer {
     padding: 0 10px;
   }
   
-  /* 🌐 Mobile Responsiveness */
+  /* 🌐 Mobile Responsive */
   @media (max-width: 600px) {
     #reviews {
       padding: 40px 10px;

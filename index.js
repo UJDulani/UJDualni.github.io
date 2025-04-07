@@ -176,17 +176,19 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-const reviewCards = document.querySelectorAll('.review-card');
-let currentReview = 0;
+document.addEventListener("DOMContentLoaded", () => {
+  const reviewCards = document.querySelectorAll('.review-card');
+  let currentReview = 0;
 
-function showReview() {
-  reviewCards.forEach((card, idx) => {
-    card.classList.remove('active');
-    if (idx === currentReview) card.classList.add('active');
-  });
+  function showReview() {
+    reviewCards.forEach((card, idx) => {
+      card.classList.remove('active');
+      if (idx === currentReview) card.classList.add('active');
+    });
 
-  currentReview = (currentReview + 1) % reviewCards.length;
-}
+    currentReview = (currentReview + 1) % reviewCards.length;
+  }
 
-showReview();
-setInterval(showReview, 10000); // ⏱ 10 seconds per review
+  showReview();
+  setInterval(showReview, 10000); // 10 seconds
+});
