@@ -483,12 +483,13 @@ footer {
 /* Footer Logo uj */
 .footer-logo {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 6px;
 }
 
 .footer-logo img {
-  height: 30px;
-  object-fit: contain;
+  width: 80px;
+  height: auto;
+  margin-left: 2rem;
 }
 
 /* Scroll Animation */
