@@ -176,29 +176,20 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-let currentSlide = 0;
-const testimonials = document.querySelectorAll('.testimonial-card');
+const reviewCards = document.querySelectorAll('.review-card');
+let currentReview = 0;
 
-function updateTestimonials() {
-  testimonials.forEach((card, index) => {
+function cycleReviews() {
+  reviewCards.forEach((card, idx) => {
     card.classList.remove('active');
-    if (index === currentSlide) {
-      card.classList.add('active');
-    }
+    if (idx === currentReview) card.classList.add('active');
   });
 
-  const track = document.querySelector('.testimonial-track');
-  track.style.transform = `translateX(-${currentSlide * 100}%)`;
+  currentReview = (currentReview + 1) % reviewCards.length;
 }
 
-document.getElementById('next').addEventListener('click', () => {
-  currentSlide = (currentSlide + 1) % testimonials.length;
-  updateTestimonials();
-});
+// First call
+cycleReviews();
 
-document.getElementById('prev').addEventListener('click', () => {
-  currentSlide = (currentSlide - 1 + testimonials.length) % testimonials.length;
-  updateTestimonials();
-});
-
-document.addEventListener('DOMContentLoaded', updateTestimonials);
+// Auto switch every 30 seconds
+setInterval(cycleReviews, 30000);
