@@ -190,5 +190,5 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   showReview();
-  setInterval(showReview, 10000); // 10 seconds
+  setInterval(showReview, 5000); 
 });
