@@ -180,13 +180,13 @@ document.addEventListener("DOMContentLoaded", function() {
 const reviews = [
   {
     img: "images/reviews/AseelAI.jpeg",
-    name: "Aseel",
-    position: "Mentor - AI engineer",
+    name: "اسيل المحمدي",
+    position: "مرشدة - مهندسة ذكاء أصطناعي ",
     text: "تجربتي كمرشدة في دلني كانت من أجمل المبادرات؛ فيها أيقنت أن الأثر الحقيقي يبدأ بكلمة، ويُخلّد بدعم صادق.ليست مجرد توجيه، بل مشاركة في صناعة مستقبل واعد واختصارٌ لمعنى الأثر الحقيقي" },
   {
     img: "images/reviews/AbrarDS.jpeg",
-    name: "Abrar ",
-    position: "Mentor",
+    name: "ابرار حبيب الله ",
+    position: "مرشدة - عالمة بيانات ",
     text: " "
   },
   // Add 6 more like this...
