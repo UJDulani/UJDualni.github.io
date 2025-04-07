@@ -134,20 +134,29 @@ footer {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
 
-  .footer-pages {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(120px, 1fr));
-    gap: 0.5rem 1.5rem;
+  .footer-pages-horizontal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.2rem;
+    margin-top: 1rem;
   }
   
-  .footer-pages a {
+  .footer-pages-horizontal a {
     color: #d6e6f0;
     text-decoration: none;
+    font-size: 0.95rem;
+    white-space: nowrap;
     transition: color 0.3s ease;
   }
   
-  .footer-pages a:hover {
+  .footer-pages-horizontal a:hover {
     color: white;
+  }
+  
+  @media (max-width: 600px) {
+    .footer-pages-horizontal a {
+      font-size: 0.85rem;
+    }
   }
   
   
