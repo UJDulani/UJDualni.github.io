@@ -360,6 +360,8 @@ h2::after {
     flex-direction: column;
     text-align: center;
   }
+  
+  .logo{width:219px}
 
   .section-content {
     flex-direction: column;
