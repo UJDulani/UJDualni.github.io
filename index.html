@@ -1039,65 +1039,230 @@
       <div id="mentors-list">
       </div>
     </section>
-    
-   <section id="reviews">
-  <h2 class="section-title">آراء المشاركين</h2>
-  <div class="review-container">
-    <div class="review-card active">
-      <img src="images/review1.jpg" alt="Reviewer 1">
-      <h3>أسماء العنزي</h3>
-      <div class="title">طالبة تقنية معلومات</div>
-      <div class="desc">تجربة ثرية وممتعة! تعلمت الكثير واستفدت من كل لحظة.</div>
-    </div>
-    <div class="review-card">
-      <img src="images/review2.jpg" alt="Reviewer 2">
-      <h3>سارة الغامدي</h3>
-      <div class="title">مهندسة برمجيات</div>
-      <div class="desc">الفعالية كانت ممتازة والتنظيم احترافي للغاية.</div>
-    </div>
-    <div class="review-card">
-      <img src="images/review3.jpg" alt="Reviewer 3">
-      <h3>نورة الحربي</h3>
-      <div class="title">طالبة علوم بيانات</div>
-      <div class="desc">استفدت كثيرًا من النقاشات وورش العمل، شكرًا لكم!</div>
-    </div>
-    <div class="review-card">
-      <img src="images/review4.jpg" alt="Reviewer 4">
-      <h3>محمد القحطاني</h3>
-      <div class="title">مبرمج</div>
-      <div class="desc">أفضل تجربة شاركت فيها، تنظيم ممتاز وبيئة محفزة.</div>
-    </div>
-    <div class="review-card">
-      <img src="images/review5.jpg" alt="Reviewer 5">
-      <h3>شهد البقمي</h3>
-      <div class="title">مهتمة بالذكاء الاصطناعي</div>
-      <div class="desc">أنصح الجميع بالمشاركة، التجربة تفوق التوقعات.</div>
-    </div>
-    <div class="review-card">
-      <img src="images/review6.jpg" alt="Reviewer 6">
-      <h3>عبدالله الشهراني</h3>
-      <div class="title">طالب هندسة</div>
-      <div class="desc">كان المحتوى قويًا جدًا، والمدربين رائعين.</div>
-    </div>
-    <div class="review-card">
-      <img src="images/review7.jpg" alt="Reviewer 7">
-      <h3>رزان المطيري</h3>
-      <div class="title">طالبة تصميم</div>
-      <div class="desc">حبيت التعاون بين الجميع والروح الإيجابية.</div>
-    </div>
-    <div class="review-card">
-      <img src="images/review8.jpg" alt="Reviewer 8">
-      <h3>تركي الدوسري</h3>
-      <div class="title">محلل بيانات</div>
-      <div class="desc">التنظيم أكثر من رائع والتجربة ملهمة جدًا.</div>
-    </div>
-    <div class="review-card">
-      <img src="images/review9.jpg" alt="Somepane Tamsus">
-      <h3>Somepane Tamsus</h3>
-      <div class="title">Creative Designer</div>
-      <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-    </div>
-  </div>
+    <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آراء المشاركين</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        
+        .section-title {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        
+        /* Review Carousel Styles */
+        .review-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            padding: 20px 0;
+            gap: 20px;
+            width: 90%;
+            margin: 0 auto;
+        }
+        
+        .review-container::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .review-card {
+            scroll-snap-align: start;
+            flex: 0 0 300px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .review-card h3 {
+            color: #2c3e50;
+            margin: 15px 0 5px;
+            font-size: 20px;
+        }
+        
+        .review-card .title {
+            color: #7f8c8d;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .review-card .desc {
+            color: #34495e;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+        
+        /* No Image Placeholder */
+        .text-only-placeholder {
+            height: 60px; /* Maintains consistent spacing */
+        }
+        
+        /* Navigation Dots */
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .dot {
+            width: 10px;
+            height: 10px;
+            background: #ccc;
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+        
+        .dot.active {
+            background: #333;
+        }
+    </style>
+</head>
+<body>
+    <section id="reviews">
+        <h2 class="section-title">آراء المشاركين</h2>
+        <div class="review-container" id="reviewCarousel">
+            <div class="review-card active">
+                <img src="images/review1.jpg" alt="Reviewer 1">
+                <h3>أسماء العنزي</h3>
+                <div class="title">طالبة تقنية معلومات</div>
+                <div class="desc">تجربة ثرية وممتعة! تعلمت الكثير واستفدت من كل لحظة.</div>
+            </div>
+            <div class="review-card">
+                <img src="images/review2.jpg" alt="Reviewer 2">
+                <h3>سارة الغامدي</h3>
+                <div class="title">مهندسة برمجيات</div>
+                <div class="desc">الفعالية كانت ممتازة والتنظيم احترافي للغاية.</div>
+            </div>
+            <div class="review-card">
+                <img src="images/review3.jpg" alt="Reviewer 3">
+                <h3>نورة الحربي</h3>
+                <div class="title">طالبة علوم بيانات</div>
+                <div class="desc">استفدت كثيرًا من النقاشات وورش العمل، شكرًا لكم!</div>
+            </div>
+            <div class="review-card">
+                <img src="images/review4.jpg" alt="Reviewer 4">
+                <h3>محمد القحطاني</h3>
+                <div class="title">مبرمج</div>
+                <div class="desc">أفضل تجربة شاركت فيها، تنظيم ممتاز وبيئة محفزة.</div>
+            </div>
+            <div class="review-card">
+                <img src="images/review5.jpg" alt="Reviewer 5">
+                <h3>شهد البقمي</h3>
+                <div class="title">مهتمة بالذكاء الاصطناعي</div>
+                <div class="desc">أنصح الجميع بالمشاركة، التجربة تفوق التوقعات.</div>
+            </div>
+            <div class="review-card">
+                <img src="images/review6.jpg" alt="Reviewer 6">
+                <h3>عبدالله الشهراني</h3>
+                <div class="title">طالب هندسة</div>
+                <div class="desc">كان المحتوى قويًا جدًا، والمدربين رائعين.</div>
+            </div>
+            <div class="review-card">
+                <img src="images/review7.jpg" alt="Reviewer 7">
+                <h3>رزان المطيري</h3>
+                <div class="title">طالبة تصميم</div>
+                <div class="desc">حبيت التعاون بين الجميع والروح الإيجابية.</div>
+            </div>
+            <div class="review-card">
+                <img src="images/review8.jpg" alt="Reviewer 8">
+                <h3>تركي الدوسري</h3>
+                <div class="title">محلل بيانات</div>
+                <div class="desc">التنظيم أكثر من رائع والتجربة ملهمة جدًا.</div>
+            </div>
+            <div class="review-card">
+                <div class="text-only-placeholder"></div>
+                <h3>Somepane Tamsus</h3>
+                <div class="title">Creative Designer</div>
+                <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+            </div>
+        </div>
+        <div class="carousel-dots" id="carouselDots"></div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.getElementById('reviewCarousel');
+            const dotsContainer = document.getElementById('carouselDots');
+            const cards = document.querySelectorAll('.review-card');
+            
+            // Create dots
+            cards.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.classList.add('dot');
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => {
+                    scrollToCard(index);
+                });
+                dotsContainer.appendChild(dot);
+            });
+            
+            // Handle scroll to update active dot
+            carousel.addEventListener('scroll', () => {
+                const scrollPosition = carousel.scrollLeft + carousel.clientWidth / 2;
+                const cardWidth = cards[0].offsetWidth + 20; // Include gap
+                const activeIndex = Math.round(scrollPosition / cardWidth);
+                
+                document.querySelectorAll('.dot').forEach((dot, index) => {
+                    dot.classList.toggle('active', index === activeIndex);
+                });
+            });
+            
+            // Scroll to specific card
+            function scrollToCard(index) {
+                const cardWidth = cards[0].offsetWidth + 20; // Include gap
+                carousel.scrollTo({
+                    left: index * cardWidth,
+                    behavior: 'smooth'
+                });
+            }
+            
+            // Touch/swipe detection
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            carousel.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, {passive: true});
+            
+            carousel.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, {passive: true});
+            
+            function handleSwipe() {
+                const threshold = 50;
+                const currentScroll = carousel.scrollLeft;
+                const cardWidth = cards[0].offsetWidth + 20;
+                const currentIndex = Math.round(currentScroll / cardWidth);
+                
+                if (touchStartX - touchEndX > threshold) {
+                    // Swipe left - next card
+                    scrollToCard(Math.min(currentIndex + 1, cards.length - 1));
+                } else if (touchEndX - touchStartX > threshold) {
+                    // Swipe right - previous card
+                    scrollToCard(Math.max(currentIndex - 1, 0));
+                }
+            }
+        });
+    </script>
+</body>
+</html>
 </section>
     <section id="contact" class="fade-in">
       <h2 class="section-title">تواصل معنا</h2>
