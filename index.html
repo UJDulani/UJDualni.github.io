@@ -1026,7 +1026,7 @@
       </div>
     </section>
 
-    <section id="mentors">
+   <section id="mentors">
       <h2 class="section-title">مرشدونا</h2>
       <div class="branches">
         <button class="branch-btn" data-branch="se">هندسة البرمجيات</button>
@@ -1039,281 +1039,59 @@
       <div id="mentors-list">
       </div>
     </section>
-    <!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>آراء المشاركين</title>
-    <style>
-        /* General Styles */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-        }
-        
-        .section-title {
-            text-align: center;
-            color: #333;
-            margin-bottom: 30px;
-            font-size: 28px;
-        }
-        
-        /* Review Carousel Styles */
-        .review-container {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
-            padding: 20px 0;
-            gap: 20px;
-            width: 90%;
-            margin: 0 auto;
-        }
-        
-        .review-container::-webkit-scrollbar {
-            display: none;
-        }
-        
-        .review-card {
-            scroll-snap-align: start;
-            flex: 0 0 300px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 25px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-        
-        .review-card h3 {
-            color: #2c3e50;
-            margin: 15px 0 5px;
-            font-size: 20px;
-        }
-        
-        .review-card .title {
-            color: #7f8c8d;
-            font-size: 14px;
-            margin-bottom: 15px;
-        }
-        
-        .review-card .desc {
-            color: #34495e;
-            font-size: 15px;
-            line-height: 1.5;
-        }
-        
-        /* No Image Placeholder */
-        .text-only-placeholder {
-            height: 60px; /* Maintains consistent spacing */
-        }
-        
-        /* Navigation Dots */
-        .carousel-dots {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        
-        .dot {
-            width: 10px;
-            height: 10px;
-            background: #ccc;
-            border-radius: 50%;
-            margin: 0 5px;
-            cursor: pointer;
-        }
-        
-        .dot.active {
-            background: #333;
-        }
-    </style>
-</head>
-<body>
-  
-  <!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>آراء المشاركين</title>
-    <style>
-        /* General Styles */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-        }
-        
-        .section-title {
-            text-align: center;
-            color: #333;
-            margin-bottom: 30px;
-            font-size: 28px;
-        }
-        
-        /* Review Carousel Styles */
-        .review-container {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
-            padding: 40px 20px;
-            gap: 30px;
-            width: 90%;
-            margin: 0 auto;
-            position: relative;
-        }
-        
-        .review-container::-webkit-scrollbar {
-            display: none;
-        }
-        
-        .review-card {
-            scroll-snap-align: center;
-            flex: 0 0 80%;
-            max-width: 350px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            padding: 25px;
-            text-align: center;
-            transition: all 0.3s ease;
-            opacity: 0.7;
-            transform: scale(0.9);
-        }
-        
-        .review-card.active {
-            opacity: 1;
-            transform: scale(1);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-        
-        .review-card img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 15px;
-            display: block;
-            border: 3px solid #fff;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .review-card h3 {
-            color: #2c3e50;
-            margin: 15px 0 5px;
-            font-size: 20px;
-        }
-        
-        .review-card .title {
-            color: #7f8c8d;
-            font-size: 14px;
-            margin-bottom: 15px;
-        }
-        
-        .review-card .desc {
-            color: #34495e;
-            font-size: 15px;
-            line-height: 1.5;
-        }
-        
-        /* Navigation Dots */
-        .carousel-dots {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-            gap: 8px;
-        }
-        
-        .dot {
-            width: 12px;
-            height: 12px;
-            background: #ddd;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .dot.active {
-            background: #2c3e50;
-            transform: scale(1.2);
-        }
-        
-        /* Responsive Adjustments */
-        @media (min-width: 768px) {
-            .review-card {
-                flex: 0 0 40%;
-            }
-        }
-        
-        @media (min-width: 1024px) {
-            .review-card {
-                flex: 0 0 30%;
-            }
-        }
-    </style>
-</head>
-<body>
+    
     <section id="reviews">
-        <h2 class="section-title">آراء المشاركين</h2>
-        <div class="review-container" id="reviewCarousel">
-            <div class="review-card active">
-                <img src="images/review1.jpg" alt="Reviewer 1">
-                <h3>أسماء العنزي</h3>
-                <div class="title">طالبة تقنية معلومات</div>
-                <div class="desc">تجربة ثرية وممتعة! تعلمت الكثير واستفدت من كل لحظة.</div>
-            </div>
-            <div class="review-card">
-                <img src="images/review2.jpg" alt="Reviewer 2">
-                <h3>سارة الغامدي</h3>
-                <div class="title">مهندسة برمجيات</div>
-                <div class="desc">الفعالية كانت ممتازة والتنظيم احترافي للغاية.</div>
-            </div>
-            <div class="review-card">
-                <img src="images/review3.jpg" alt="Reviewer 3">
-                <h3>نورة الحربي</h3>
-                <div class="title">طالبة علوم بيانات</div>
-                <div class="desc">استفدت كثيرًا من النقاشات وورش العمل، شكرًا لكم!</div>
-            </div>
-            <div class="review-card">
-                <img src="images/review4.jpg" alt="Reviewer 4">
-                <h3>محمد القحطاني</h3>
-                <div class="title">مبرمج</div>
-                <div class="desc">أفضل تجربة شاركت فيها، تنظيم ممتاز وبيئة محفزة.</div>
-            </div>
-            <div class="review-card">
-                <img src="images/review5.jpg" alt="Reviewer 5">
-                <h3>شهد البقمي</h3>
-                <div class="title">مهتمة بالذكاء الاصطناعي</div>
-                <div class="desc">أنصح الجميع بالمشاركة، التجربة تفوق التوقعات.</div>
-            </div>
-            <div class="review-card">
-                <img src="images/review6.jpg" alt="Reviewer 6">
-                <h3>عبدالله الشهراني</h3>
-                <div class="title">طالب هندسة</div>
-                <div class="desc">كان المحتوى قويًا جدًا، والمدربين رائعين.</div>
-            </div>
-            <div class="review-card">
-                <img src="images/review7.jpg" alt="Reviewer 7">
-                <h3>رزان المطيري</h3>
-                <div class="title">طالبة تصميم</div>
-                <div class="desc">حبيت التعاون بين الجميع والروح الإيجابية.</div>
-            </div>
-            <div class="review-card">
-                <img src="images/review8.jpg" alt="Reviewer 8">
-                <h3>تركي الدوسري</h3>
-                <div class="title">محلل بيانات</div>
-                <div class="desc">التنظيم أكثر من رائع والتجربة ملهمة جدًا.</div>
-            </div>
+      <h2 class="section-title">آراء المشاركين</h2>
+      <div class="review-container">
+        <div class="review-card active">
+          <img src="images/review1.jpg" alt="Reviewer 1">
+          <h3>أسماء العنزي</h3>
+          <div class="title">طالبة تقنية معلومات</div>
+          <div class="desc">تجربة ثرية وممتعة! تعلمت الكثير واستفدت من كل لحظة.</div>
         </div>
-        <div class="carousel-dots" id="carouselDots"></div>
+        <div class="review-card">
+          <img src="images/review2.jpg" alt="Reviewer 2">
+          <h3>سارة الغامدي</h3>
+          <div class="title">مهندسة برمجيات</div>
+          <div class="desc">الفعالية كانت ممتازة والتنظيم احترافي للغاية.</div>
+        </div>
+        <div class="review-card">
+          <img src="images/review3.jpg" alt="Reviewer 3">
+          <h3>نورة الحربي</h3>
+          <div class="title">طالبة علوم بيانات</div>
+          <div class="desc">استفدت كثيرًا من النقاشات وورش العمل، شكرًا لكم!</div>
+        </div>
+        <div class="review-card">
+          <img src="images/review4.jpg" alt="Reviewer 4">
+          <h3>محمد القحطاني</h3>
+          <div class="title">مبرمج</div>
+          <div class="desc">أفضل تجربة شاركت فيها، تنظيم ممتاز وبيئة محفزة.</div>
+        </div>
+        <div class="review-card">
+          <img src="images/review5.jpg" alt="Reviewer 5">
+          <h3>شهد البقمي</h3>
+          <div class="title">مهتمة بالذكاء الاصطناعي</div>
+          <div class="desc">أنصح الجميع بالمشاركة، التجربة تفوق التوقعات.</div>
+        </div>
+        <div class="review-card">
+          <img src="images/review6.jpg" alt="Reviewer 6">
+          <h3>عبدالله الشهراني</h3>
+          <div class="title">طالب هندسة</div>
+          <div class="desc">كان المحتوى قويًا جدًا، والمدربين رائعين.</div>
+        </div>
+        <div class="review-card">
+          <img src="images/review7.jpg" alt="Reviewer 7">
+          <h3>رزان المطيري</h3>
+          <div class="title">طالبة تصميم</div>
+          <div class="desc">حبيت التعاون بين الجميع والروح الإيجابية.</div>
+        </div>
+        <div class="review-card">
+          <img src="images/review8.jpg" alt="Reviewer 8">
+          <h3>تركي الدوسري</h3>
+          <div class="title">محلل بيانات</div>
+          <div class="desc">التنظيم أكثر من رائع والتجربة ملهمة جدًا.</div>
+        </div>
+      </div>
     </section>
 
     <script>
