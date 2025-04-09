@@ -1134,6 +1134,133 @@
     </style>
 </head>
 <body>
+  
+  <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آراء المشاركين</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        
+        .section-title {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        
+        /* Review Carousel Styles */
+        .review-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            padding: 40px 20px;
+            gap: 30px;
+            width: 90%;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .review-container::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .review-card {
+            scroll-snap-align: center;
+            flex: 0 0 80%;
+            max-width: 350px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            opacity: 0.7;
+            transform: scale(0.9);
+        }
+        
+        .review-card.active {
+            opacity: 1;
+            transform: scale(1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .review-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 15px;
+            display: block;
+            border: 3px solid #fff;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .review-card h3 {
+            color: #2c3e50;
+            margin: 15px 0 5px;
+            font-size: 20px;
+        }
+        
+        .review-card .title {
+            color: #7f8c8d;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .review-card .desc {
+            color: #34495e;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+        
+        /* Navigation Dots */
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 8px;
+        }
+        
+        .dot {
+            width: 12px;
+            height: 12px;
+            background: #ddd;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .dot.active {
+            background: #2c3e50;
+            transform: scale(1.2);
+        }
+        
+        /* Responsive Adjustments */
+        @media (min-width: 768px) {
+            .review-card {
+                flex: 0 0 40%;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .review-card {
+                flex: 0 0 30%;
+            }
+        }
+    </style>
+</head>
+<body>
     <section id="reviews">
         <h2 class="section-title">آراء المشاركين</h2>
         <div class="review-container" id="reviewCarousel">
@@ -1185,16 +1312,102 @@
                 <div class="title">محلل بيانات</div>
                 <div class="desc">التنظيم أكثر من رائع والتجربة ملهمة جدًا.</div>
             </div>
-            <div class="review-card">
-                <div class="text-only-placeholder"></div>
-                <h3>Somepane Tamsus</h3>
-                <div class="title">Creative Designer</div>
-                <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-            </div>
         </div>
         <div class="carousel-dots" id="carouselDots"></div>
     </section>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.getElementById('reviewCarousel');
+            const dotsContainer = document.getElementById('carouselDots');
+            const cards = document.querySelectorAll('.review-card');
+            
+            // Create dots
+            cards.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.classList.add('dot');
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => {
+                    scrollToCard(index);
+                });
+                dotsContainer.appendChild(dot);
+            });
+            
+            const dots = document.querySelectorAll('.dot');
+            
+            // Update active card and dot
+            function updateActiveCard() {
+                const scrollPosition = carousel.scrollLeft + carousel.clientWidth / 2;
+                const cardWidth = cards[0].offsetWidth + 30; // Include gap
+                const activeIndex = Math.round(scrollPosition / cardWidth);
+                
+                cards.forEach((card, index) => {
+                    const isActive = index === activeIndex;
+                    card.classList.toggle('active', isActive);
+                    
+                    // Adjust opacity and scale based on distance from center
+                    const distance = Math.abs(index - activeIndex);
+                    if (distance === 1) {
+                        card.style.opacity = '0.85';
+                        card.style.transform = 'scale(0.95)';
+                    } else if (distance > 1) {
+                        card.style.opacity = '0.6';
+                        card.style.transform = 'scale(0.9)';
+                    }
+                });
+                
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === activeIndex);
+                });
+            }
+            
+            // Scroll to specific card
+            function scrollToCard(index) {
+                const cardWidth = cards[0].offsetWidth + 30; // Include gap
+                carousel.scrollTo({
+                    left: index * cardWidth,
+                    behavior: 'smooth'
+                });
+            }
+            
+            // Handle scroll events
+            carousel.addEventListener('scroll', updateActiveCard);
+            
+            // Initialize
+            updateActiveCard();
+            
+            // Touch/swipe detection
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            carousel.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, {passive: true});
+            
+            carousel.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, {passive: true});
+            
+            function handleSwipe() {
+                const threshold = 50;
+                const currentScroll = carousel.scrollLeft;
+                const cardWidth = cards[0].offsetWidth + 30;
+                const currentIndex = Math.round(currentScroll / cardWidth);
+                
+                if (touchStartX - touchEndX > threshold) {
+                    // Swipe left - next card
+                    scrollToCard(Math.min(currentIndex + 1, cards.length - 1));
+                } else if (touchEndX - touchStartX > threshold) {
+                    // Swipe right - previous card
+                    scrollToCard(Math.max(currentIndex - 1, 0));
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+  
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const carousel = document.getElementById('reviewCarousel');
